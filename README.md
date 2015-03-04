@@ -2,6 +2,8 @@ Swift Extended Library is aiming to offer native Swift alternatives to Cocoa/Coc
 
 #Get Started
 - Download Swift Extended Library
+- Drag Swift Extended Library’s Xcode project file to your workspace
+- Add Swift Extended Library to your`Emebed Binaries`  field in your target’s general page if you are building an app. Or add Swift Extended Library to your `Linked Frameworks and Libraries` field in your target’s general page if you are building a framework.
 - Add `import SwiftExt` to your Swift source file
 - Enjoy your journey of Swift Extended Library
 
