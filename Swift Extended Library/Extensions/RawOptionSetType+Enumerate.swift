@@ -16,6 +16,15 @@ public func !|? <T where T: BitwiseOperationsType, T: Equatable> (left: T, right
     return (right & left) == T.allZeros
 }
 
+/**
+Option set traversal options.
+
+- HandleOccurred: Handle occurred options
+
+- HandleNotOccurred: Handle not occurred options
+
+- ReverselyEnumerate: Enumerate reversely
+*/
 public struct OptionSetTraversalOptions: RawOptionSetType {
     public typealias RawValue = UInt
     public let rawValue: RawValue
@@ -31,6 +40,16 @@ public struct OptionSetTraversalOptions: RawOptionSetType {
     public static var ReverselyEnumerate:   OptionSetTraversalOptions   { return self(1 << 2) }
 }
 
+
+/**
+Enumerate each occurred/not occurred option in a given RawOptionSetType conformed type value.
+
+:param:     optionSet               A RawOptionSetType conformed type value to enumerate
+
+:param:     options                 Options instructs enumeration
+
+:param:     handler                 Handler to handle enumeration
+*/
 public func enumerate<T: RawOptionSetType where T.RawValue == UInt>(optionSet: T, withOptions options: OptionSetTraversalOptions, usingClosure handler:(optionSet: T, option: T) -> Bool) {
     let shouldHandleOccurred        = options |? .HandleOccurred
     let shouldHandleNotOccurred     = options |? .HandleNotOccurred

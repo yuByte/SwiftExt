@@ -84,11 +84,25 @@ public func - <T: Equatable> (lhs: Array<T>, rhs: Array<T>) -> Array<T> {
     return copied
 }
 
-public func indexCap<T : _CollectionType>(x: T) -> T.Index.Distance {
+/**
+To get the index cap of a given CollectionType conformed type value
+
+:param:     x               The CollectionType conformed type value
+
+:returns:   The index cap for x
+*/
+public func indexCap<T : CollectionType>(x: T) -> T.Index.Distance {
     return max(count(x) - T.Index.Distance(1), T.Index.Distance(0))
 }
 
-public func lastIndex<T : _CollectionType>(x: T) -> T.Index.Distance? {
+/**
+To get the last index of a given CollectionType conformed type value
+
+:param:     x               The CollectionType conformed type value
+
+:returns:   The last index for x
+*/
+public func lastIndex<T : CollectionType>(x: T) -> T.Index.Distance? {
     let elementsCount = count(x)
     if elementsCount == 0 {
         return nil

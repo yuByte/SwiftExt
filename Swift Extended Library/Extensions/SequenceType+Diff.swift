@@ -6,7 +6,19 @@
 //
 //
 
-/// Sequence difference
+/**
+Sequence difference.
+
+- Stationary: Indicates a sequence element's position is not changed.
+
+- Added: Indicates a sequence element is newly inserted.
+
+- Deleted: Indicates a sequence element is deleted.
+
+- Moved: Indicates a sequence element's position is moved.
+
+- Changed: Indicates a sequence element's content is changed, which judged by your custom comparator.
+*/
 public struct SequenceDifference: RawOptionSetType, DebugPrintable, Printable {
     public typealias RawValue = UInt
     
@@ -55,6 +67,7 @@ public struct SequenceDifference: RawOptionSetType, DebugPrintable, Printable {
     }
 }
 
+
 private class SequenceElementContainer<Element>: Equatable {
     var traversed = false
     let index: Int
@@ -76,7 +89,18 @@ private func == <Element> (left: SequenceElementContainer<Element>, right: Seque
     return (left.traversed == right.traversed && left.equalComparator(left.element, right.element))
 }
 
-/// Diff two sequences
+/**
+Diff two sequences whose generator's element type conforms to Equatable protocol.
+
+:param:     fromSequence            The original sequence
+
+:param:     toSequence              The changed sequence
+
+:param:     differences             A SequenceDifference value which indicates what differences shall be inspected
+
+:param:     changesHandler          The handler being used to handle captured difference
+
+*/
 public func diff<Seq: SequenceType where Seq.Generator.Element : Equatable>
     (from fromSequence: Seq?, to toSequence: Seq?,
     #differences: SequenceDifference,
@@ -87,7 +111,23 @@ public func diff<Seq: SequenceType where Seq.Generator.Element : Equatable>
     diff(from: fromSequence, to: toSequence, differences: differences, equalComparator: {$0 == $1}, unchangedComparator: {$0 == $1}, usingClosure: changesHandler)
 }
 
-/// Diff two sequences by comparing with custom handler
+
+/**
+Diff two arbitrary sequences by using custom equality and unchange comparator.
+
+:param:     fromSequence            The original sequence
+
+:param:     toSequence              The changed sequence
+
+:param:     differences             A SequenceDifference value which indicates what differences shall be inspected
+
+:param:     equalComparator         The comparator handles equality checking
+
+:param:     unchangedComparator     The comparator handles unchange checking
+
+:param:     changesHandler          The handler being used to handle captured difference
+
+*/
 public func diff<Seq: SequenceType>
     (from fromSequence: Seq?, to toSequence: Seq?,
     #differences: SequenceDifference,
