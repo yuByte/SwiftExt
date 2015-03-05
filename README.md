@@ -9,6 +9,8 @@ Swift Extended Library is aiming to offer native Swift alternatives to Cocoa/Coc
 
 #Contents
 ##New Operators
+####`^`: 
+Logical exclusive-or operator.
 ####`^^`: 
 To calculate the power to a given `Int` value, function definition: `func ^^(var base: Int, var exponent: Int) -> Int`.
 
@@ -36,7 +38,11 @@ To get the difference between two sequence whose elements conformed to `Equatabl
 ####`func diff<Seq: SequenceType> (from fromSequence: Seq?, to toSequence: Seq?, #differences: SequenceDifference, #equalComparator: ((Seq.Generator.Element, Seq.Generator.Element) -> Bool), #unchangedComparator: ((Seq.Generator.Element, Seq.Generator.Element) -> Bool), usingClosure changesHandler: (change: SequenceDifference, fromElement: (index: Int, element: Seq.Generator.Element)?, toElement: (index: Int, element: Seq.Generator.Element)?) -> Void)`:
 To get the difference between two sequence by using custom equality and unchange judging handler.
 ####`enumerate<T: RawOptionSetType where T.RawValue == UInt>(optionSet: T, withOptions options: OptionSetTraversalOptions, usingClosure handler:(optionSet: T, option: T) -> Bool )`:
-To traverse all the options in a `RawOptionSetType` conformed type.
+To traverse all occurred or not occurred options in a `RawOptionSetType` conformed type value.
+####`setValue<V, B: RawOptionSetType where B.RawValue == UInt>(value: V, forBitmask bitmask: B, inout inDictionary dictionary: Dictionary<UInt, V>)`
+To set a value in a dictionary with a given `RawOptionSetType` conformed type value.
+####`getValueForBitmask<V, B: RawOptionSetType where B.RawValue == UInt>(bitmask: B, inDictionary dictionary: [UInt: V]) -> V?`
+To get the value in a dictionary with a given `RawOptionSetType` conformed type value.
 
 #License
 Swift Extended Library is available under the MIT license. See the LICENSE file for more info.
