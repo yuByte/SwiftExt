@@ -24,14 +24,14 @@ public struct OptionSetTraversalOptions: RawOptionSetType {
     public init(rawValue value: RawValue) { self.rawValue = value }
     public init(nilLiteral: ()) { self.rawValue = 0 }
     
-    public static var allZeros: OptionSetTraversalOptions                    { return self(0) }
+    public static var allZeros:             OptionSetTraversalOptions   { return self(0) }
     
-    public static var HandleOccurred: OptionSetTraversalOptions              { return self(1 << 0) }
-    public static var HandleNotOccurred: OptionSetTraversalOptions           { return self(1 << 1) }
-    public static var ReverselyEnumerate: OptionSetTraversalOptions          { return self(1 << 2) }
+    public static var HandleOccurred:       OptionSetTraversalOptions   { return self(1 << 0) }
+    public static var HandleNotOccurred:    OptionSetTraversalOptions   { return self(1 << 1) }
+    public static var ReverselyEnumerate:   OptionSetTraversalOptions   { return self(1 << 2) }
 }
 
-public func enumerate<T: RawOptionSetType where T.RawValue == UInt>(optionSet: T, withOptions options: OptionSetTraversalOptions, usingClosure handler:(optionSet: T, option: T) -> Bool ) {
+public func enumerate<T: RawOptionSetType where T.RawValue == UInt>(optionSet: T, withOptions options: OptionSetTraversalOptions, usingClosure handler:(optionSet: T, option: T) -> Bool) {
     let shouldHandleOccurred        = options |? .HandleOccurred
     let shouldHandleNotOccurred     = options |? .HandleNotOccurred
     let shouldReverselyEnumerate    = options |? .ReverselyEnumerate
@@ -46,9 +46,9 @@ public func enumerate<T: RawOptionSetType where T.RawValue == UInt>(optionSet: T
         let hasOccurred = examinedRawValue |? referenceRawValue
         
         if shouldHandleOccurred && hasOccurred && !shouldStop
-            { shouldStop = handler(optionSet: optionSet, option: T(rawValue: referenceRawValue))}
+        { shouldStop = handler(optionSet: optionSet, option: T(rawValue: referenceRawValue))}
         if shouldHandleNotOccurred && !hasOccurred && !shouldStop
-            { shouldStop = handler(optionSet: optionSet, option: T(rawValue: referenceRawValue))}
+        { shouldStop = handler(optionSet: optionSet, option: T(rawValue: referenceRawValue))}
         
         referenceRawValue = shouldReverselyEnumerate ? referenceRawValue >> 1 : referenceRawValue << 1
         

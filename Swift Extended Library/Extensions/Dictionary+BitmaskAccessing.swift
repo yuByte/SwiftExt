@@ -6,18 +6,18 @@
 //
 //
 
-public func setValue<V>(value: V, forBitmask bitmask: UInt, inout inDictionary dictionary: Dictionary<UInt, V>) {
-    dictionary.updateValue(value, forKey: bitmask)
+public func setValue<V, B: RawOptionSetType where B.RawValue == UInt>(value: V, forBitmask bitmask: B, inout inDictionary dictionary: Dictionary<UInt, V>) {
+    dictionary.updateValue(value, forKey: bitmask.rawValue)
 }
 
-public func getValueForBitmask<V>(bitmask: UInt, inDictionary dictionary: [UInt: V]) -> V? {
-    let object = dictionary[bitmask]
+public func getValueForBitmask<V, B: RawOptionSetType where B.RawValue == UInt>(bitmask: B, inDictionary dictionary: [UInt: V]) -> V? {
+    let object = dictionary[bitmask.rawValue]
     if (object != nil) {
         return object
-    } else if bitmask == 0 {
+    } else if bitmask.rawValue == 0 {
         return nil
     } else {
-        let nextBitmask = bitmask >> 1
-        return getValueForBitmask(nextBitmask, inDictionary: dictionary)
+        let nextBitmask = bitmask.rawValue >> 1
+        return getValueForBitmask(B(rawValue: nextBitmask), inDictionary: dictionary)
     }
 }
