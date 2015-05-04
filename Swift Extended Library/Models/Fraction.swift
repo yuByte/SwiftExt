@@ -6,7 +6,7 @@
 //
 //
 
-public struct Fraction: Equatable, DebugPrintable, Printable {
+public struct Fraction {
     public var numerator: Int
     public var denominator: Int
     
