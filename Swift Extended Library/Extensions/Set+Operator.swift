@@ -8,13 +8,13 @@
 
 // MARK: Operators
 // Plus
-public func +=<T>(inout lhs: Set<T>, rhs: T) {
+public func += <T>(inout lhs: Set<T>, rhs: T) {
     lhs.insert(rhs)
 }
 
-public func +=<T>(inout lhs: Set<T>, rhs: Set<T>) {
-    for element in lhs {
-        lhs.insert(element)
+public func += <T>(inout lhs: Set<T>, rhs: Set<T>) {
+    for each in rhs {
+        lhs.insert(each)
     }
 }
 
@@ -35,13 +35,13 @@ public func + <T>(lhs: Set<T>, rhs: Set<T>) -> Set<T> {
 }
 
 // Minus
-public func -=<T>(inout lhs: Set<T>, rhs: T) {
+public func -= <T>(inout lhs: Set<T>, rhs: T) {
     lhs.remove(rhs)
 }
 
-public func -=<T>(inout lhs: Set<T>, rhs: Set<T>) {
-    for element in lhs {
-        lhs.remove(element)
+public func -= <T>(inout lhs: Set<T>, rhs: Set<T>) {
+    for each in rhs {
+        lhs.remove(each)
     }
 }
 
@@ -58,5 +58,5 @@ public func - <T>(lhs: T, rhs: Set<T>) -> Set<T> {
 }
 
 public func - <T>(lhs: Set<T>, rhs: Set<T>) -> Set<T> {
-    return lhs.union(rhs)//
+    return lhs.subtract(rhs)
 }
