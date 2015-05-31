@@ -33,14 +33,39 @@ To check if a collection insertects with an other whose generator's element type
 
 :returns:   A result indicates if collectionA contains collectionB
 */
-public func intersected<C : ExtensibleCollectionType where C.Generator.Element : Equatable>(collectionA: C, collectionB: C) -> C {
-    var newCollection = C()
+public func intersected<C : ExtensibleCollectionType
+    where C.Generator.Element : Equatable>
+    (collection1: C,
+    collection2: C,
+    handler: ((element: C.Generator.Element, index1: C.Index?, index2: C.Index?, contains: Bool)-> Void)? = nil)
+    -> C
+{
+    var results = C()
     
-    for eachElement in collectionA {
-        if !contains(newCollection, eachElement) && contains(collectionB, eachElement) {
-            newCollection.append(eachElement)
+    var intersectedElementsInColelction2 = C()
+    
+    for element1 in collection1 {
+        let index1 = find(collection1, element1)
+        let index2 = find(collection2, element1)
+        if !contains(results, element1) && index2 != nil {
+            results.append(element1)
+            intersectedElementsInColelction2.append(element1)
+            handler?(element: element1, index1: index1, index2: index2, contains: true)
+        } else {
+            handler?(element: element1, index1: index1, index2: index2, contains: false)
         }
     }
     
-    return newCollection
+    if let handler = handler {
+        for element2 in collection2 {
+            if !contains(intersectedElementsInColelction2, element2) {
+                let index1 = find(collection1, element2)
+                let index2 = find(collection2, element2)
+                
+                handler(element: element2, index1: index1, index2: index2, contains: false)
+            }
+        }
+    }
+    
+    return results
 }
