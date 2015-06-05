@@ -1,6 +1,11 @@
 Swift Extended Library is aiming to offer native Swift alternatives to Cocoa/CocoaTouch and missing conveniences in standard Swift library.
 
 #Get Started
+
+##CocoaPods
+pod "SwiftExt"
+
+##Manually Install
 - Download Swift Extended Library
 - Drag Swift Extended Library’s Xcode project file to your workspace
 - Add Swift Extended Library to your`Emebed Binaries`  field in your target’s general page if you are building an app. Or add Swift Extended Library to your `Linked Frameworks and Libraries` field in your target’s general page if you are building a framework.
