@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftExt"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A library extends Swift standard library"
 
   s.description  = <<-DESC
@@ -18,11 +18,13 @@ Pod::Spec.new do |s|
 
   s.author	     = { "WeZZard" => "wezzardlau@gmail.com" }
   
-  s.platform     = :ios, "8.0"
+  s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.9"
 
   s.source       = { :git => "https://github.com/WeZZard/Swift-Extended-Library.git", :tag => s.version.to_s }
 
-  s.source_files  = "Swift\ Extended\ Library/**/*.*", "Swift\ Extended\ Library\ for\ iOS/**/*.{}", "Swift\ Extended\ Library\ for\ OS\ X/**/*.*"
+  s.ios.source_files  = "Swift\ Extended\ Library/**/*.swift", "Swift\ Extended\ Library\ for\ iOS/**/*.swift"
+  s.osx.source_files  = "Swift\ Extended\ Library/**/*.swift", "Swift\ Extended\ Library\ for\ OS\ X/**/*.swift"
 
   s.requires_arc = true
 end
