@@ -8,80 +8,46 @@
 
 import Swift
 
-private func getAffectedIndex<I: protocol<Comparable, BidirectionalIndexType>>
-    (originalIndex: I, removedIndicesCount: Int)
-    -> I
-{
-    var affectedIndex = originalIndex
-    for _ in 0..<removedIndicesCount {
-        affectedIndex = affectedIndex.predecessor()
+extension RangeReplaceableCollectionType where Generator.Element : Equatable, Generator.Element == _Element, Index: protocol<Comparable, ForwardIndexType> {
+    mutating public func removeIndices(indices: [Self.Index]) -> Self
+    {
+        var removed = Self()
+        
+        let sortedIndices = indices.sort { $0 < $1}
+        
+        for eachIndex in sortedIndices {
+            let finalIndex = advance(eachIndex, distance(removed.endIndex, removed.startIndex))
+            let target = self[finalIndex]
+            removed.append(target)
+            removeAtIndex(finalIndex)
+        }
+        
+        return removed
     }
-    return affectedIndex
 }
 
-/*
-Remove
-
-:param:     lhs             A given string
-
-:param:     rhs             Repeat times
-*/
-public func removeIndices<C : RangeReplaceableCollectionType where
-    C.Generator.Element : Equatable,
-    C.Index: protocol<Comparable, BidirectionalIndexType>>
-    (inout collection: C, indices: [C.Index])
-    -> C
-{
-    var removed = C()
-    
-    var removedIndicesCount = 0
-    
-    let sortedIndices = indices.sorted { $0 < $1}
-    
-    for eachIndex in sortedIndices {
-        let finalIndex = getAffectedIndex(eachIndex, removedIndicesCount)
-        let target = collection[finalIndex]
-        removed.append(target)
-        removedIndicesCount += 1
-        collection.removeAtIndex(finalIndex)
-    }
-    
-    return removed
-}
-
-public func remove<C : RangeReplaceableCollectionType where
-    C.Generator.Element : Equatable,
-    C.Index: protocol<Comparable, BidirectionalIndexType>>
-    (inout collection: C, elements: C)
-    -> C
-{
-    var indices = [Any]()
-    
-    for eachElement in elements {
-        if let index = find(collection, eachElement) {
-            indices.append(index)
+extension RangeReplaceableCollectionType where Generator.Element : Equatable, Generator.Element == _Element, Index: protocol<Comparable, ForwardIndexType> {
+    mutating public func remove(elements: Self) -> Self
+    {
+        var indicesToBeRemoved: [Self.Index] = []
+        
+        for eachElement in elements {
+            if let index = indexOf(eachElement) {
+                indicesToBeRemoved.append(index)
+            }
         }
-    }
-    
-    var removed = C()
-    
-    var removedIndicesCount = 0
-    
-    let sortedIndices = indices.sorted {
-        if let index1 = $0 as? C.Index,
-        let index2 = $1 as? C.Index{
-            return index1 < index2
+        
+        var removed = Self()
+        
+        let sortedIndicesToBeRemoved = indicesToBeRemoved.sort {$0 < $1}
+        
+        for eachIndex in sortedIndicesToBeRemoved {
+            let finalIndex = advance(eachIndex, distance(removed.endIndex, removed.startIndex))
+            let target = self[finalIndex]
+            removed.append(target)
+            removeAtIndex(finalIndex)
         }
-        return true
-    } as! [C.Index]
-    
-    for eachIndex in sortedIndices {
-        let finalIndex = getAffectedIndex(eachIndex, removedIndicesCount)
-        let target = collection[finalIndex]
-        removed.append(target)
-        removedIndicesCount += 1
-        collection.removeAtIndex(finalIndex)
+        
+        return removed
     }
-    
-    return removed
 }

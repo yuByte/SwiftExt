@@ -6,66 +6,64 @@
 //
 //
 
-/**
-To check if a sequence insertects with an other whose generator's element type conforms to Equatable protocol.
-
-:param:     seqA                A sequence
-
-:param:     seqB                An other sequence
-
-:returns:   A result indicates if seqA contains seqB
-*/
-public func intersects<S : SequenceType where S.Generator.Element : Equatable>(seqA: S, seqB: S) -> Bool {
-    for eachElement in seqB {
-        if contains(seqA, eachElement) {
-            return true
-        }
-    }
-    return false
-}
-
-/**
-To check if a collection insertects with an other whose generator's element type conforms to Equatable protocol.
-
-:param:     collectionA         A collection
-
-:param:     collectionB         An other collection
-
-:returns:   A result indicates if collectionA contains collectionB
-*/
-public func intersected<C : ExtensibleCollectionType
-    where C.Generator.Element : Equatable>
-    (collection1: C,
-    collection2: C,
-    handler: ((element: C.Generator.Element, index1: C.Index?, index2: C.Index?, contains: Bool)-> Void)? = nil)
-    -> C
-{
-    var results = C()
+extension SequenceType where Generator.Element : Equatable {
+    /**
+    To check if a sequence insertects with an other whose generator's element type conforms to Equatable protocol.
     
-    var intersectedElementsInColelction2 = C()
+    - parameter     sequence:   The sequence to be evaluated
     
-    for element1 in collection1 {
-        let index1 = find(collection1, element1)
-        let index2 = find(collection2, element1)
-        if !contains(results, element1) && index2 != nil {
-            results.append(element1)
-            intersectedElementsInColelction2.append(element1)
-            handler?(element: element1, index1: index1, index2: index2, contains: true)
-        } else {
-            handler?(element: element1, index1: index1, index2: index2, contains: false)
-        }
-    }
-    
-    if let handler = handler {
-        for element2 in collection2 {
-            if !contains(intersectedElementsInColelction2, element2) {
-                let index1 = find(collection1, element2)
-                let index2 = find(collection2, element2)
-                
-                handler(element: element2, index1: index1, index2: index2, contains: false)
+    - returns:      A result indicates if the receiver intersects the evaluated sequence
+    */
+    public func intersects(sequence: Self) -> Bool {
+        for eachElement in sequence {
+            if contains(eachElement) {
+                return true
             }
         }
+        return false
     }
+}
+
+extension ExtensibleCollectionType where Generator.Element : Equatable {
+    /**
+    To check if a collection insertects with an other whose generator's element type conforms to Equatable protocol.
     
-    return results
+    - parameter     collection:     The collection to be intersected with
+    
+    - returns:      A result indicates if collectionA contains collectionB
+    */
+    public func intersected
+        (collection: Self,
+        handler: ((element: Self.Generator.Element, index: Self.Index?, indexInCollection: Self.Index?, contains: Bool)-> Void)? = nil)
+        -> Self
+    {
+        var results = Self()
+        
+        var intersectedElementsInColelction2 = Self()
+        
+        for element1 in self {
+            let index1 = self.indexOf(element1)
+            let index2 = collection.indexOf(element1)
+            if !results.contains(element1) && index2 != nil {
+                results.append(element1)
+                intersectedElementsInColelction2.append(element1)
+                handler?(element: element1, index: index1, indexInCollection: index2, contains: true)
+            } else {
+                handler?(element: element1, index: index1, indexInCollection: index2, contains: false)
+            }
+        }
+        
+        if let handler = handler {
+            for element2 in collection {
+                if !intersectedElementsInColelction2.contains(element2) {
+                    let index1 = self.indexOf(element2)
+                    let index2 = collection.indexOf(element2)
+                    
+                    handler(element: element2, index: index1, indexInCollection: index2, contains: false)
+                }
+            }
+        }
+        
+        return results
+    }
 }

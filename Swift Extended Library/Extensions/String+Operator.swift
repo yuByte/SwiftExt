@@ -14,7 +14,7 @@ Create a string which repeats itself with the given string
 :param:     rhs             Repeat times
 */
 public func *(lhs: String, rhs: Int) -> String {
-    return repeatString(lhs, rhs)
+    return repeatString(lhs, times: rhs)
 }
 
 /*
@@ -25,12 +25,12 @@ Create a string which repeats itself with the given string
 :param:     rhs             A given string
 */
 public func *(lhs: Int, rhs: String) -> String {
-    return repeatString(rhs, lhs)
+    return repeatString(rhs, times: lhs)
 }
 
 private func repeatString(string: String, times: Int) -> String {
     var repeated = ""
-    for time in 0..<times {
+    for _ in 0..<times {
         repeated += string
     }
     return repeated

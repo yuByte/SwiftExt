@@ -32,7 +32,7 @@ public func += <T> (inout lhs: Array<T>, rhs: T?) {
 public func -= <T: Equatable> (inout lhs: Array<T>, rhs: Array<T>?) {
     if rhs != nil {
         for object in rhs! {
-            if let indexInLhs = find(lhs, object) {
+            if let indexInLhs = lhs.indexOf(object) {
                 lhs.removeAtIndex(indexInLhs)
             }
         }
@@ -41,7 +41,7 @@ public func -= <T: Equatable> (inout lhs: Array<T>, rhs: Array<T>?) {
 
 public func -= <T: Equatable> (inout lhs: Array<T>, rhs: T?) {
     if rhs != nil {
-        if let indexInLhs = find(lhs, rhs!) {
+        if let indexInLhs = lhs.indexOf(rhs!) {
             lhs.removeAtIndex(indexInLhs)
         }
     }
@@ -68,7 +68,7 @@ public func + <T> (lhs: T, rhs: Array<T>?) -> Array<T> {
 
 public func - <T: Equatable> (lhs: Array<T>, rhs: T) -> Array<T> {
     var copied = lhs
-    if let indexInCopied = find(copied, rhs) {
+    if let indexInCopied = copied.indexOf(rhs) {
         copied.removeAtIndex(indexInCopied)
     }
     return copied
@@ -77,36 +77,9 @@ public func - <T: Equatable> (lhs: Array<T>, rhs: T) -> Array<T> {
 public func - <T: Equatable> (lhs: Array<T>, rhs: Array<T>) -> Array<T> {
     var copied = lhs
     for object in rhs {
-        if let indexInCopied = find(copied, object) {
+        if let indexInCopied = copied.indexOf(object) {
             copied.removeAtIndex(indexInCopied)
         }
     }
     return copied
-}
-
-/**
-To get the index cap of a given CollectionType conformed type value
-
-:param:     x               The CollectionType conformed type value
-
-:returns:   The index cap for x
-*/
-public func indexCap<T : CollectionType>(x: T) -> T.Index.Distance {
-    return max(count(x) - T.Index.Distance(1), T.Index.Distance(0))
-}
-
-/**
-To get the last index of a given CollectionType conformed type value
-
-:param:     x               The CollectionType conformed type value
-
-:returns:   The last index for x
-*/
-public func lastIndex<T : CollectionType>(x: T) -> T.Index.Distance? {
-    let elementsCount = count(x)
-    if elementsCount == 0 {
-        return nil
-    } else {
-        return max(elementsCount - T.Index.Distance(1), T.Index.Distance(0))
-    }
 }

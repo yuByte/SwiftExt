@@ -6,21 +6,27 @@
 //
 //
 
-/**
-Remove duplicated element in a ExtensibleCollectionType conformed type value
-
-:param:     aCollection         The collection to remove duplicates
-
-:returns:   Returns a collection without duplicate elements.
-*/
-public func removeDuplicates<C: ExtensibleCollectionType where C.Generator.Element : Equatable>(aCollection: C) -> C {
-    var container = C()
+extension ExtensibleCollectionType where Generator.Element : Equatable {
+    /**
+    Remove duplicated element in a ExtensibleCollectionType conformed type value
     
-    for element in aCollection {
-        if !contains(container, element) {
-            container.append(element)
+    - returns:   Returns the duplicates
+    */
+    mutating public func removeDuplicates() -> Self {
+        var container = Self()
+        var duplicates = Self()
+        
+        for element in self {
+            if !container.contains(element) {
+                container.append(element)
+            } else {
+                duplicates.append(element)
+            }
         }
+        
+        self = container
+        
+        return duplicates
     }
-    
-    return container
 }
+

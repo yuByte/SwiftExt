@@ -14,11 +14,11 @@ precedence 150
 /**
 To calculate the power of given exponent to a given Int value
 
-:param:     base            The base
+- parameter     base:            The base
 
-:param:     exponent        The exponent
+- parameter     exponent:        The exponent
 
-:returns:   The power of given exponent to a given Int value
+- returns:   The power of given exponent to a given Int value
 */
 public func ^^(var base: Int, var exponent: Int) -> Int {
     switch base {

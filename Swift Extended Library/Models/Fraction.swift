@@ -15,8 +15,27 @@ public struct Fraction {
     }
     
     public var integerValue: Int {
-        return numerator % denominator
+        return numerator / denominator
     }
+    
+    public init(numerator aNumerator: Int, denominator aDenominator: Int) {
+        let lowestCommonDivisor = lowest_common_divisor(aNumerator, rhs: aDenominator)
+        numerator = (aNumerator / lowestCommonDivisor)
+        denominator = (aDenominator / lowestCommonDivisor)
+    }
+}
+
+private func lowest_common_divisor(lhs: Int, rhs: Int) -> Int {
+    var a = lhs
+    var b = rhs
+    var modResult = 0
+    while b != 0
+    {
+        modResult = a % b
+        a = b
+        b = modResult
+    }
+    return a
 }
 
 extension Fraction: FloatLiteralConvertible {
@@ -24,7 +43,7 @@ extension Fraction: FloatLiteralConvertible {
         // As float point number in computer rarely has a real precision
         // Let's get the visible part by convert it into a string
         let valueString = value.description
-        if let dotPosition = find(valueString, ".") {
+        if let _ = valueString.characters.indexOf(".") {
             let decimalPartLength = distance(valueString.startIndex, advance(valueString.endIndex, -1))
             let enlarged = 10 ^^ decimalPartLength
             self = Fraction(numerator: Int(value) * enlarged, denominator: enlarged)
@@ -40,7 +59,7 @@ extension Fraction: IntegerLiteralConvertible {
     }
 }
 
-extension Fraction: Equatable, DebugPrintable, Printable {
+extension Fraction: Comparable, CustomDebugStringConvertible, CustomStringConvertible {
     public var description: String {
         return "\(numerator)/\(denominator)"
     }
@@ -77,10 +96,27 @@ public func /(lhs: Fraction, rhs: Fraction) -> Fraction {
 }
 
 public func ==(lhs: Fraction, rhs: Fraction) -> Bool {
-    return (
+    return (lhs.numerator == rhs.numerator && lhs.denominator == rhs.denominator) ||
+        (lhs.numerator % rhs.numerator) == (lhs.denominator % rhs.denominator)
+}
+public func <(lhs: Fraction, rhs: Fraction) -> Bool {
+    return lhs.numerator * rhs.denominator < rhs.numerator * lhs.denominator
+}
+
+public func <=(lhs: Fraction, rhs: Fraction) -> Bool {
+    return lhs.numerator * rhs.denominator < rhs.numerator * lhs.denominator ||
         (lhs.numerator == rhs.numerator && lhs.denominator == rhs.denominator) ||
-        ((lhs.numerator / rhs.numerator) == (lhs.denominator / rhs.denominator))
-    )
+        (lhs.numerator % rhs.numerator) == (lhs.denominator % rhs.denominator)
+}
+
+public func >=(lhs: Fraction, rhs: Fraction) -> Bool {
+    return lhs.numerator * rhs.denominator > rhs.numerator * lhs.denominator ||
+        (lhs.numerator == rhs.numerator && lhs.denominator == rhs.denominator) ||
+        (lhs.numerator % rhs.numerator) == (lhs.denominator % rhs.denominator)
+}
+
+public func >(lhs: Fraction, rhs: Fraction) -> Bool {
+    return lhs.numerator * rhs.denominator > rhs.numerator * lhs.denominator
 }
 
 extension Double {

@@ -7,7 +7,7 @@
 //
 
 // MARK: Operators
-// Plus
+// Addition
 public func += <T>(inout lhs: Set<T>, rhs: T) {
     lhs.insert(rhs)
 }
@@ -34,7 +34,7 @@ public func + <T>(lhs: Set<T>, rhs: Set<T>) -> Set<T> {
     return lhs.union(rhs)
 }
 
-// Minus
+// Subtraction
 public func -= <T>(inout lhs: Set<T>, rhs: T) {
     lhs.remove(rhs)
 }
