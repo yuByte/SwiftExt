@@ -91,14 +91,14 @@
 			containerPortal = 63847C4A19E79B8C0098BC0E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 63847C5419E79C0C0098BC0E;
-			remoteInfo = "Swift Extended Library for iOS";
+			remoteInfo = "Swift-Extended-Library-for-iOS";
 		};
 		63847C8019E79C200098BC0E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63847C4A19E79B8C0098BC0E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 63847C7319E79C200098BC0E;
-			remoteInfo = "Swift Extended Library for OS X";
+			remoteInfo = "Swift-Extended-Library-for-OS-X";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -138,17 +138,16 @@
 		63808DA61A99AB4C00CD8441 /* Set+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+Operator.swift"; sourceTree = "<group>"; };
 		63847C5519E79C0C0098BC0E /* SwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C5919E79C0C0098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63847C6019E79C0C0098BC0E /* Swift Extended Library for iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift Extended Library for iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63847C6019E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-Extended-Library-for-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C6619E79C0C0098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63847C6719E79C0C0098BC0E /* Swift_Extended_Library_for_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Extended_Library_for_iOSTests.swift; sourceTree = "<group>"; };
 		63847C7419E79C200098BC0E /* SwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C7719E79C200098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63847C7E19E79C200098BC0E /* Swift Extended Library for OS XTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift Extended Library for OS XTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63847C7E19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-Extended-Library-for-OS-XTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C8419E79C200098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63847C8519E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Extended_Library_for_OS_XTests.swift; sourceTree = "<group>"; };
 		63A084BA1A149DC90054CE84 /* Dictionary+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Operator.swift"; sourceTree = "<group>"; };
 		63B2FADC1B157D7E008CD7C4 /* Remove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remove.swift; sourceTree = "<group>"; };
-		63E0D78819E7BBAC00CAEA8E /* Swift Extended Library Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Swift Extended Library Playground.playground"; sourceTree = SOURCE_ROOT; };
 		63E899D51B0C873500C2B61E /* String+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Operator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,11 +185,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		631552D61B252DDF009C2B92 /* Swift Extended LibraryTests */ = {
+		631552D61B252DDF009C2B92 /* Swift-Extended-LibraryTests */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "Swift Extended LibraryTests";
+			path = "Swift-Extended-LibraryTests";
 			sourceTree = "<group>";
 		};
 		631643B81A5BA2FD00DE70DC /* Functions */ = {
@@ -238,13 +237,12 @@
 		63847C4919E79B8C0098BC0E = {
 			isa = PBXGroup;
 			children = (
-				63E0D78819E7BBAC00CAEA8E /* Swift Extended Library Playground.playground */,
-				63847C8D19E79C540098BC0E /* Swift Extended Library */,
-				631552D61B252DDF009C2B92 /* Swift Extended LibraryTests */,
-				63847C5719E79C0C0098BC0E /* Swift Extended Library for iOS */,
-				63847C6419E79C0C0098BC0E /* Swift Extended Library for iOSTests */,
-				63847C7519E79C200098BC0E /* Swift Extended Library for OS X */,
-				63847C8219E79C200098BC0E /* Swift Extended Library for OS XTests */,
+				63847C8D19E79C540098BC0E /* Swift-Extended-Library */,
+				631552D61B252DDF009C2B92 /* Swift-Extended-LibraryTests */,
+				63847C5719E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */,
+				63847C6419E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */,
+				63847C7519E79C200098BC0E /* Swift-Extended-Library-for-OS-X */,
+				63847C8219E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */,
 				63847C5619E79C0C0098BC0E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -253,19 +251,19 @@
 			isa = PBXGroup;
 			children = (
 				63847C5519E79C0C0098BC0E /* SwiftExt.framework */,
-				63847C6019E79C0C0098BC0E /* Swift Extended Library for iOSTests.xctest */,
+				63847C6019E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests.xctest */,
 				63847C7419E79C200098BC0E /* SwiftExt.framework */,
-				63847C7E19E79C200098BC0E /* Swift Extended Library for OS XTests.xctest */,
+				63847C7E19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		63847C5719E79C0C0098BC0E /* Swift Extended Library for iOS */ = {
+		63847C5719E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				63847C5819E79C0C0098BC0E /* Supporting Files */,
 			);
-			path = "Swift Extended Library for iOS";
+			path = "Swift-Extended-Library-for-iOS";
 			sourceTree = "<group>";
 		};
 		63847C5819E79C0C0098BC0E /* Supporting Files */ = {
@@ -276,13 +274,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63847C6419E79C0C0098BC0E /* Swift Extended Library for iOSTests */ = {
+		63847C6419E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
 				63847C6719E79C0C0098BC0E /* Swift_Extended_Library_for_iOSTests.swift */,
 				63847C6519E79C0C0098BC0E /* Supporting Files */,
 			);
-			path = "Swift Extended Library for iOSTests";
+			path = "Swift-Extended-Library-for-iOSTests";
 			sourceTree = "<group>";
 		};
 		63847C6519E79C0C0098BC0E /* Supporting Files */ = {
@@ -293,12 +291,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63847C7519E79C200098BC0E /* Swift Extended Library for OS X */ = {
+		63847C7519E79C200098BC0E /* Swift-Extended-Library-for-OS-X */ = {
 			isa = PBXGroup;
 			children = (
 				63847C7619E79C200098BC0E /* Supporting Files */,
 			);
-			path = "Swift Extended Library for OS X";
+			path = "Swift-Extended-Library-for-OS-X";
 			sourceTree = "<group>";
 		};
 		63847C7619E79C200098BC0E /* Supporting Files */ = {
@@ -309,13 +307,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63847C8219E79C200098BC0E /* Swift Extended Library for OS XTests */ = {
+		63847C8219E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */ = {
 			isa = PBXGroup;
 			children = (
 				63847C8519E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift */,
 				63847C8319E79C200098BC0E /* Supporting Files */,
 			);
-			path = "Swift Extended Library for OS XTests";
+			path = "Swift-Extended-Library-for-OS-XTests";
 			sourceTree = "<group>";
 		};
 		63847C8319E79C200098BC0E /* Supporting Files */ = {
@@ -326,7 +324,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63847C8D19E79C540098BC0E /* Swift Extended Library */ = {
+		63847C8D19E79C540098BC0E /* Swift-Extended-Library */ = {
 			isa = PBXGroup;
 			children = (
 				631643B81A5BA2FD00DE70DC /* Functions */,
@@ -335,7 +333,7 @@
 				63847C8E19E79D4A0098BC0E /* Controllers */,
 				63847C8F19E79D4A0098BC0E /* Models */,
 			);
-			path = "Swift Extended Library";
+			path = "Swift-Extended-Library";
 			sourceTree = "<group>";
 		};
 		63847C8E19E79D4A0098BC0E /* Controllers */ = {
@@ -387,9 +385,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		63847C5419E79C0C0098BC0E /* Swift Extended Library for iOS */ = {
+		63847C5419E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63847C6919E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift Extended Library for iOS" */;
+			buildConfigurationList = 63847C6919E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-iOS" */;
 			buildPhases = (
 				63847C5019E79C0C0098BC0E /* Sources */,
 				63847C5119E79C0C0098BC0E /* Frameworks */,
@@ -400,14 +398,14 @@
 			);
 			dependencies = (
 			);
-			name = "Swift Extended Library for iOS";
-			productName = "Swift Extended Library for iOS";
+			name = "Swift-Extended-Library-for-iOS";
+			productName = "Swift-Extended-Library-for-iOS";
 			productReference = 63847C5519E79C0C0098BC0E /* SwiftExt.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		63847C5F19E79C0C0098BC0E /* Swift Extended Library for iOSTests */ = {
+		63847C5F19E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63847C6C19E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift Extended Library for iOSTests" */;
+			buildConfigurationList = 63847C6C19E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-iOSTests" */;
 			buildPhases = (
 				63847C5C19E79C0C0098BC0E /* Sources */,
 				63847C5D19E79C0C0098BC0E /* Frameworks */,
@@ -418,14 +416,14 @@
 			dependencies = (
 				63847C6319E79C0C0098BC0E /* PBXTargetDependency */,
 			);
-			name = "Swift Extended Library for iOSTests";
-			productName = "Swift Extended Library for iOSTests";
-			productReference = 63847C6019E79C0C0098BC0E /* Swift Extended Library for iOSTests.xctest */;
+			name = "Swift-Extended-Library-for-iOSTests";
+			productName = "Swift-Extended-Library-for-iOSTests";
+			productReference = 63847C6019E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		63847C7319E79C200098BC0E /* Swift Extended Library for OS X */ = {
+		63847C7319E79C200098BC0E /* Swift-Extended-Library-for-OS X */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63847C8719E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift Extended Library for OS X" */;
+			buildConfigurationList = 63847C8719E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-OS X" */;
 			buildPhases = (
 				63847C6F19E79C200098BC0E /* Sources */,
 				63847C7019E79C200098BC0E /* Frameworks */,
@@ -436,14 +434,14 @@
 			);
 			dependencies = (
 			);
-			name = "Swift Extended Library for OS X";
-			productName = "Swift Extended Library for OS X";
+			name = "Swift-Extended-Library-for-OS X";
+			productName = "Swift-Extended-Library-for-OS-X";
 			productReference = 63847C7419E79C200098BC0E /* SwiftExt.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		63847C7D19E79C200098BC0E /* Swift Extended Library for OS XTests */ = {
+		63847C7D19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63847C8A19E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift Extended Library for OS XTests" */;
+			buildConfigurationList = 63847C8A19E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-OS-XTests" */;
 			buildPhases = (
 				63847C7A19E79C200098BC0E /* Sources */,
 				63847C7B19E79C200098BC0E /* Frameworks */,
@@ -454,9 +452,9 @@
 			dependencies = (
 				63847C8119E79C200098BC0E /* PBXTargetDependency */,
 			);
-			name = "Swift Extended Library for OS XTests";
-			productName = "Swift Extended Library for OS XTests";
-			productReference = 63847C7E19E79C200098BC0E /* Swift Extended Library for OS XTests.xctest */;
+			name = "Swift-Extended-Library-for-OS-XTests";
+			productName = "Swift-Extended-Library-for-OS-XTests";
+			productReference = 63847C7E19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -484,7 +482,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 63847C4D19E79B8C0098BC0E /* Build configuration list for PBXProject "Swift Extended Library" */;
+			buildConfigurationList = 63847C4D19E79B8C0098BC0E /* Build configuration list for PBXProject "Swift-Extended-Library" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -496,10 +494,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				63847C5419E79C0C0098BC0E /* Swift Extended Library for iOS */,
-				63847C5F19E79C0C0098BC0E /* Swift Extended Library for iOSTests */,
-				63847C7319E79C200098BC0E /* Swift Extended Library for OS X */,
-				63847C7D19E79C200098BC0E /* Swift Extended Library for OS XTests */,
+				63847C5419E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */,
+				63847C5F19E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */,
+				63847C7319E79C200098BC0E /* Swift-Extended-Library-for-OS X */,
+				63847C7D19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */,
 			);
 		};
 /* End PBXProject section */
@@ -643,12 +641,12 @@
 /* Begin PBXTargetDependency section */
 		63847C6319E79C0C0098BC0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63847C5419E79C0C0098BC0E /* Swift Extended Library for iOS */;
+			target = 63847C5419E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */;
 			targetProxy = 63847C6219E79C0C0098BC0E /* PBXContainerItemProxy */;
 		};
 		63847C8119E79C200098BC0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63847C7319E79C200098BC0E /* Swift Extended Library for OS X */;
+			target = 63847C7319E79C200098BC0E /* Swift-Extended-Library-for-OS X */;
 			targetProxy = 63847C8019E79C200098BC0E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -711,7 +709,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift Extended Library for iOS/Info.plist";
+				INFOPLIST_FILE = "Swift-Extended-Library-for-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -762,7 +760,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift Extended Library for iOS/Info.plist";
+				INFOPLIST_FILE = "Swift-Extended-Library-for-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -818,7 +816,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift Extended Library for iOSTests/Info.plist";
+				INFOPLIST_FILE = "Swift-Extended-Library-for-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -863,7 +861,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift Extended Library for iOSTests/Info.plist";
+				INFOPLIST_FILE = "Swift-Extended-Library-for-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -916,7 +914,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift Extended Library for OS X/Info.plist";
+				INFOPLIST_FILE = "Swift-Extended-Library-for-OS-X/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -969,7 +967,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift Extended Library for OS X/Info.plist";
+				INFOPLIST_FILE = "Swift-Extended-Library-for-OS-X/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -1022,7 +1020,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift Extended Library for OS XTests/Info.plist";
+				INFOPLIST_FILE = "Swift-Extended-Library-for-OS-XTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1066,7 +1064,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift Extended Library for OS XTests/Info.plist";
+				INFOPLIST_FILE = "Swift-Extended-Library-for-OS-XTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1079,7 +1077,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		63847C4D19E79B8C0098BC0E /* Build configuration list for PBXProject "Swift Extended Library" */ = {
+		63847C4D19E79B8C0098BC0E /* Build configuration list for PBXProject "Swift-Extended-Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C4E19E79B8C0098BC0E /* Debug */,
@@ -1088,7 +1086,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63847C6919E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift Extended Library for iOS" */ = {
+		63847C6919E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C6A19E79C0C0098BC0E /* Debug */,
@@ -1097,7 +1095,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63847C6C19E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift Extended Library for iOSTests" */ = {
+		63847C6C19E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C6D19E79C0C0098BC0E /* Debug */,
@@ -1106,7 +1104,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63847C8719E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift Extended Library for OS X" */ = {
+		63847C8719E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-OS X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C8819E79C200098BC0E /* Debug */,
@@ -1115,7 +1113,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63847C8A19E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift Extended Library for OS XTests" */ = {
+		63847C8A19E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-OS-XTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C8B19E79C200098BC0E /* Debug */,

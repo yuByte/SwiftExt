@@ -26,13 +26,14 @@ public struct SequenceDifference: OptionSetType, CustomDebugStringConvertible, C
     
     public init(rawValue value: RawValue) { self.rawValue = value }
     
-    public static var Stationary:   SequenceDifference  { return self.init(rawValue: 0) }
-    public static var Added:        SequenceDifference  { return self.init(rawValue: 1 << 0) }
-    public static var Deleted:      SequenceDifference  { return self.init(rawValue: 1 << 1) }
-    public static var Moved:        SequenceDifference  { return self.init(rawValue: 1 << 2) }
-    public static var Changed:      SequenceDifference  { return self.init(rawValue: 1 << 3) }
+    public static var Stationary    = SequenceDifference(rawValue: 0)
+    public static var Added         = SequenceDifference(rawValue: 1 << 0)
+    public static var Deleted       = SequenceDifference(rawValue: 1 << 1)
+    public static var Moved         = SequenceDifference(rawValue: 1 << 2)
+    public static var Changed       = SequenceDifference(rawValue: 1 << 3)
     
-    public static var All:          SequenceDifference  { return [.Stationary, .Added, .Deleted, .Moved, .Changed] }
+    public static var All: SequenceDifference =
+        [.Stationary, .Added, .Deleted, .Moved, .Changed]
     
     public var description: String {
         get {
@@ -73,7 +74,7 @@ extension SequenceType where Generator.Element : Equatable {
     - parameter     changesHandler:          The handler being used to handle captured difference
     
     */
-    public func diff(comparedSequence: Self?,
+    public func diff(comparedSequence: Self,
         differences: SequenceDifference,
         usingClosure changesHandler: (change: SequenceDifference,
         fromElement: (index: Int, element: Generator.Element)?,
@@ -100,7 +101,7 @@ extension SequenceType {
     - parameter     changesHandler:          The handler being used to handle captured difference
     
     */
-    public func diff(comparedSequence: Self?,
+    public func diff(comparedSequence: Self,
         differences: SequenceDifference,
         equalComparator: ((Generator.Element, Generator.Element) -> Bool),
         unchangedComparator: ((Generator.Element, Generator.Element) -> Bool),
@@ -122,16 +123,14 @@ extension SequenceType {
         let shouldWrap = shouldInspectInserted || shouldInspectStationary || shouldInspectDeleted || shouldInspectMoved
         
         if shouldWrap {
-            for fromElement in self.enumerate() {
+            for fromElement in enumerate() {
                 let wrappedElement = SequenceElementContainer<Element>(fromElement.index, fromElement.element, equalComparator, unchangedComparator)
                 wrappedFromElements.append(wrappedElement)
             }
             
-            if comparedSequence != nil {
-                for toElement in (comparedSequence!).enumerate() {
-                    let wrappedElement = SequenceElementContainer<Element>(toElement.index, toElement.element, equalComparator, unchangedComparator)
-                    wrappedToElements.append(wrappedElement)
-                }
+            for toElement in comparedSequence.enumerate() {
+                let wrappedElement = SequenceElementContainer<Element>(toElement.index, toElement.element, equalComparator, unchangedComparator)
+                wrappedToElements.append(wrappedElement)
             }
         }
         

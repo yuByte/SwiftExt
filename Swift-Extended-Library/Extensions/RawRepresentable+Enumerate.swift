@@ -7,7 +7,7 @@
 //
 
 /**
-OptionSetType traversal options.
+Bitmask traversal options.
 
 - HandleOccurred: Handle occurred options
 
@@ -21,9 +21,9 @@ public struct BitmaskTraversalOptions: OptionSetType {
     
     public init(rawValue value: RawValue) { self.rawValue = value }
     
-    public static var HandleOccurred:       BitmaskTraversalOptions   { return self.init(rawValue: 1 << 0) }
-    public static var HandleNotOccurred:    BitmaskTraversalOptions   { return self.init(rawValue: 1 << 1) }
-    public static var ReverselyEnumerate:   BitmaskTraversalOptions   { return self.init(rawValue: 1 << 2) }
+    public static var HandleOccurred        = BitmaskTraversalOptions(rawValue: 1 << 0)
+    public static var HandleNotOccurred     = BitmaskTraversalOptions(rawValue: 1 << 1)
+    public static var ReverselyEnumerate    = BitmaskTraversalOptions(rawValue: 1 << 2)
 }
 
 /**
