@@ -23,8 +23,8 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/WeZZard/Swift-Extended-Library.git", :tag => s.version.to_s }
 
-  s.ios.source_files  = "Swift\ Extended\ Library/**/*.swift", "Swift\ Extended\ Library\ for\ iOS/**/*.swift"
-  s.osx.source_files  = "Swift\ Extended\ Library/**/*.swift", "Swift\ Extended\ Library\ for\ OS\ X/**/*.swift"
+  s.ios.source_files  = "Swift-Extended-Library/**/*.swift", "Swift-Extended-Library-for-iOS/**/*.swift"
+  s.osx.source_files  = "Swift-Extended-Library/**/*.swift", "Swift-Extended-Library-for-OS-X/**/*.swift"
 
   s.requires_arc = true
 end
