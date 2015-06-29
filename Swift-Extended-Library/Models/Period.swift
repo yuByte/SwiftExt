@@ -1,6 +1,6 @@
 //
 //  Period.swift
-//  WZFoundation
+//  Swift Extended Library
 //
 //  Created by Manfred Lau on 9/30/14.
 //  Copyright (c) 2014 WeZZard. All rights reserved.
