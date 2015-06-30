@@ -1,5 +1,5 @@
 //
-//  SequenceChanges.swift
+//  CollectionType+Diff.swift
 //  Swift Extended Library
 //
 //  Created by Manfred Lau on 10/13/14.
@@ -19,7 +19,9 @@ Sequence difference.
 
 - Changed: Indicates a sequence element's content is changed, which judged by your custom comparator.
 */
-public struct CollectionDiff: OptionSetType, CustomDebugStringConvertible, CustomStringConvertible {
+public struct CollectionDiff: OptionSetType,
+CustomDebugStringConvertible, CustomStringConvertible
+{
     public typealias RawValue = UInt
     
     public let rawValue: RawValue
