@@ -77,6 +77,8 @@
 		63847C6819E79C0C0098BC0E /* Swift_Extended_Library_for_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63847C6719E79C0C0098BC0E /* Swift_Extended_Library_for_iOSTests.swift */; };
 		63847C7F19E79C200098BC0E /* SwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63847C7419E79C200098BC0E /* SwiftExt.framework */; };
 		63847C8619E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63847C8519E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift */; };
+		639BA7551B424630007319BE /* SetAlgebraType+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639BA7541B424630007319BE /* SetAlgebraType+Operator.swift */; };
+		639BA7561B424630007319BE /* SetAlgebraType+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639BA7541B424630007319BE /* SetAlgebraType+Operator.swift */; };
 		63A084BB1A149DC90054CE84 /* Dictionary+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A084BA1A149DC90054CE84 /* Dictionary+Operator.swift */; };
 		63A084BC1A149DC90054CE84 /* Dictionary+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A084BA1A149DC90054CE84 /* Dictionary+Operator.swift */; };
 		63B2FADD1B157D7E008CD7C4 /* Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2FADC1B157D7E008CD7C4 /* Remove.swift */; };
@@ -146,6 +148,7 @@
 		63847C7E19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-Extended-Library-for-OS-XTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C8419E79C200098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63847C8519E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Extended_Library_for_OS_XTests.swift; sourceTree = "<group>"; };
+		639BA7541B424630007319BE /* SetAlgebraType+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SetAlgebraType+Operator.swift"; sourceTree = "<group>"; };
 		63A084BA1A149DC90054CE84 /* Dictionary+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Operator.swift"; sourceTree = "<group>"; };
 		63B2FADC1B157D7E008CD7C4 /* Remove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remove.swift; sourceTree = "<group>"; };
 		63E899D51B0C873500C2B61E /* String+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Operator.swift"; sourceTree = "<group>"; };
@@ -219,6 +222,7 @@
 		637FF79119EB88AC004F741C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				639BA7541B424630007319BE /* SetAlgebraType+Operator.swift */,
 				63808DA61A99AB4C00CD8441 /* Set+Operator.swift */,
 				6316ECA619F48FB200B31AA5 /* Array+Operator.swift */,
 				631552FF1B2535CC009C2B92 /* CollectionType+Conveniences.swift */,
@@ -541,6 +545,7 @@
 				633A26CB1AA6FE5A001A9353 /* Formatter.swift in Sources */,
 				631552FB1B2533A5009C2B92 /* TimeInterval.swift in Sources */,
 				631552F51B2533A5009C2B92 /* DateComponents.swift in Sources */,
+				639BA7551B424630007319BE /* SetAlgebraType+Operator.swift in Sources */,
 				631643BD1A5BA33600DE70DC /* CustomRecursiveStringConvertible.swift in Sources */,
 				631552EB1B2533A5009C2B92 /* CalendarOption.swift in Sources */,
 				631552ED1B2533A5009C2B92 /* CalendarRule.swift in Sources */,
@@ -592,6 +597,7 @@
 				633A26CC1AA6FE5A001A9353 /* Formatter.swift in Sources */,
 				631552FC1B2533A5009C2B92 /* TimeInterval.swift in Sources */,
 				631552F61B2533A5009C2B92 /* DateComponents.swift in Sources */,
+				639BA7561B424630007319BE /* SetAlgebraType+Operator.swift in Sources */,
 				631643BE1A5BA33600DE70DC /* CustomRecursiveStringConvertible.swift in Sources */,
 				631552EC1B2533A5009C2B92 /* CalendarOption.swift in Sources */,
 				631552EE1B2533A5009C2B92 /* CalendarRule.swift in Sources */,
