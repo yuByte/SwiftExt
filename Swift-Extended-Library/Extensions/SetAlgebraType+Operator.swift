@@ -18,10 +18,10 @@ public func - <S: SetAlgebraType>(lhs: S, rhs: S) -> S {
 
 //MARK: +=
 public func += <S: SetAlgebraType>(inout lhs: S, rhs: S) {
-    lhs = lhs.union(rhs)
+    lhs.unionInPlace(rhs)
 }
 
 //MARK: -=
 public func -= <S: SetAlgebraType>(inout lhs: S, rhs: S) {
-    lhs = lhs.subtract(rhs)
+    lhs.subtractInPlace(rhs)
 }
