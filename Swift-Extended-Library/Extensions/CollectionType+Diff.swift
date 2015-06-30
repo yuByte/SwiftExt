@@ -159,7 +159,7 @@ extension CollectionType {
                             wrappedToElement.element,
                             wrappedFromElement!.element)
                         {
-                            changes = changes.union(.Changed)
+                            changes = changes.insert(.Changed)
                         }
                     }
                     
@@ -168,7 +168,7 @@ extension CollectionType {
                             shouldInspectChanged)
                         {
                             diffHandler(
-                                change: changes.union(.Stationary),
+                                change: changes.insert(.Stationary),
                                 fromElement: (wrappedFromElement!.index,
                                     wrappedFromElement!.element),
                                 toElement: (wrappedToElement.index,
@@ -178,7 +178,7 @@ extension CollectionType {
                         if (shouldInspectMoved ||
                             shouldInspectChanged)
                         {
-                            diffHandler(change: changes.union(.Moved),
+                            diffHandler(change: changes.insert(.Moved),
                                 fromElement: (wrappedFromElement!.index,
                                     wrappedFromElement!.element),
                                 toElement: (wrappedToElement.index,
