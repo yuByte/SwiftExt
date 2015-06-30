@@ -20,7 +20,7 @@ Sequence difference.
 - Changed: Indicates a sequence element's content is changed, which judged by your custom comparator.
 */
 public struct CollectionDiff: OptionSetType,
-CustomDebugStringConvertible, CustomStringConvertible
+CustomDebugStringConvertible, CustomStringConvertible, Hashable
 {
     public typealias RawValue = UInt
     
@@ -36,6 +36,8 @@ CustomDebugStringConvertible, CustomStringConvertible
     
     public static var All: CollectionDiff =
         [.Stationary, .Added, .Deleted, .Moved, .Changed]
+    
+    public var hashValue: Int { return Int(rawValue) }
     
     public var description: String {
         get {
@@ -73,7 +75,6 @@ extension CollectionType {
         toIndex: Index?, toElement: Generator.Element?) -> Void
     public typealias CollectionElementComparator = (Generator.Element,
         Generator.Element) -> Bool
-    
     /**
     Diff two arbitrary sequences by using custom equality and unchange comparator.
     
@@ -119,7 +120,7 @@ extension CollectionType {
             for fromElement in self {
                 let wrappedElement =
                     CollectionElementWrapper<Element, Index>(fromIndex,
-                        fromElement, indexComparator, contentComparator)
+                        fromElement, indexComparator)
                 wrappedFromElements.append(wrappedElement)
                 fromIndex = fromIndex.successor()
             }
@@ -128,7 +129,7 @@ extension CollectionType {
             for toElement in comparedCollection {
                 let wrappedElement =
                     CollectionElementWrapper<Element, Index>(toIndex,
-                        toElement, indexComparator, contentComparator)
+                        toElement, indexComparator)
                 wrappedToElements.append(wrappedElement)
                 toIndex = toIndex.successor()
             }
@@ -160,7 +161,7 @@ extension CollectionType {
                     var changes: CollectionDiff = []
                     
                     if shouldInspectChanged {
-                        if !wrappedToElement.contentComparator(
+                        if !contentComparator(
                             wrappedToElement.element,
                             wrappedFromElement!.element)
                         {
@@ -257,33 +258,30 @@ extension CollectionType where Generator.Element : Equatable {
     }
 }
 
-private class CollectionElementWrapper<Element, Index>: Equatable, CustomStringConvertible {
+internal class CollectionElementWrapper<Element, Index>: Equatable, CustomStringConvertible {
     // typealias Element = C.Generator.Element
     // typealias Index = C.Index
-    var traversed = false
-    let index: Index
-    let element: Element
-    let indexComparator: (Element, Element) -> Bool
-    let contentComparator: (Element, Element) -> Bool
-    init(_ theIndex: Index, _ theEmenet: Element,
-        _ equalComparator: (Element, Element) -> Bool,
-        _ unchangedComparator: (Element, Element) -> Bool)
+    internal var traversed = false
+    internal let index: Index
+    internal let element: Element
+    internal let equalityComparator: (Element, Element) -> Bool
+    internal init(_ theIndex: Index, _ theEmenet: Element,
+        _ theEqualityComparator: (Element, Element) -> Bool)
     {
         index = theIndex
         element = theEmenet
-        self.indexComparator = equalComparator
-        self.contentComparator = unchangedComparator
+        equalityComparator = theEqualityComparator
     }
     
-    var description: String {
+    internal var description: String {
         return "<\(CollectionElementWrapper.self); Index = \(index); Element = \(element); Traversed = \(traversed)>>"
     }
 }
 
-private func == <Element, Index>
+internal func == <Element, Index>
     (left: CollectionElementWrapper<Element, Index>,
     right: CollectionElementWrapper<Element, Index>) -> Bool
 {
     return (left.traversed == right.traversed &&
-        left.indexComparator(left.element, right.element))
+        left.equalityComparator(left.element, right.element))
 }

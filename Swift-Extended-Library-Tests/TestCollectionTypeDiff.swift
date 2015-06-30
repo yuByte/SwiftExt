@@ -77,6 +77,32 @@ class TestCollectionTypeDiff: XCTestCase {
     
     func testDiff() {
     }
+    
+    func testObjectOrientedEquatableDiff() {
+        from.diffWith(to).handleInsertion { (_, toElement) -> Void in
+            self.added.append(toElement)
+        }.handleDeletion { (_, fromElement) -> Void in
+            self.removed.append(fromElement)
+        }.handleMoving { (_, fromElement, _, _) -> Void in
+            self.moved.append(fromElement)
+        }.handleStationary { (_, fromElement) -> Void in
+            self.stationary.append(fromElement)
+        }.begin()
+        
+        added.sortInPlace()
+        removed.sortInPlace()
+        moved.sortInPlace()
+        stationary.sortInPlace()
+        
+        XCTAssert(toAdd == added,
+            "Equatable diff adding doesn't pass:\n\tTo add:\(toAdd)\n\tAdded:\(added)")
+        XCTAssert(toRemove == removed,
+            "Equatable diff remove doesn't pass:\n\tTo Remove:\(toRemove)\n\tRemoved:\(removed)")
+        XCTAssert(toMove == moved,
+            "Equatable diff move doesn't pass:\n\tTo move:\(toMove)\n\tMoved:\(moved)")
+        XCTAssert(toBeStationary == stationary,
+            "Equatable diff stationary doesn't pass:\n\tTo be stationary:\(toBeStationary)\n\tStationary: \(stationary)")
+    }
 
     func testEquatableDiff() {
         from.diff(to, differences: CollectionDiff.All) { (change, fromIndex, fromElement, toIndex, toElement) -> Void in
