@@ -8,13 +8,6 @@
 
 import Swift
 
-extension Array {
-    //FIXME: Needs to be declared as public when Swift allows adding extension to a generic type
-    var indexCap: Int {
-        return max(0, count - 1)
-    }
-}
-
 public func += <T> (inout lhs: Array<Any>, rhs: Array<T>?) {
     if rhs != nil {
         for object in rhs! {
