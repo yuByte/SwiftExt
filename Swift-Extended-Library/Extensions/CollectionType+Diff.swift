@@ -134,9 +134,6 @@ extension CollectionType {
             }
         }
         
-        print("from: \(wrappedFromElements)")
-        print("to: \(wrappedToElements)")
-        
         if (shouldInspectInserted ||
             shouldInspectStationary ||
             shouldInspectMoved)
