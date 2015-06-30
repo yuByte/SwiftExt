@@ -28,11 +28,11 @@ CustomDebugStringConvertible, CustomStringConvertible
     
     public init(rawValue value: RawValue) { self.rawValue = value }
     
-    public static var Stationary    = CollectionDiff(rawValue: 0)
-    public static var Added         = CollectionDiff(rawValue: 1 << 0)
-    public static var Deleted       = CollectionDiff(rawValue: 1 << 1)
-    public static var Moved         = CollectionDiff(rawValue: 1 << 2)
-    public static var Changed       = CollectionDiff(rawValue: 1 << 3)
+    public static var Stationary    = CollectionDiff(rawValue: 1 << 0)
+    public static var Added         = CollectionDiff(rawValue: 1 << 1)
+    public static var Deleted       = CollectionDiff(rawValue: 1 << 2)
+    public static var Moved         = CollectionDiff(rawValue: 1 << 3)
+    public static var Changed       = CollectionDiff(rawValue: 1 << 4)
     
     public static var All: CollectionDiff =
         [.Stationary, .Added, .Deleted, .Moved, .Changed]
@@ -52,7 +52,10 @@ CustomDebugStringConvertible, CustomStringConvertible
             if contains(.Changed) {
                 descriptions.append("Moved")
             }
-            return "<SequenceChanges: " + " | ".join(descriptions) + ">"
+            if contains(.Moved) {
+                descriptions.append("Moved")
+            }
+            return "<\(self.dynamicType): " + " | ".join(descriptions) + ">"
         }
     }
     
@@ -66,8 +69,8 @@ CustomDebugStringConvertible, CustomStringConvertible
 extension CollectionType {
     public typealias CollectionDiffHandler = (
         change: CollectionDiff,
-        fromElement: (index: Index, element: Generator.Element)?,
-        toElement: (index: Index, element: Generator.Element)?) -> Void
+        fromIndex: Index?, fromElement: Generator.Element?,
+        toIndex: Index?, toElement: Generator.Element?) -> Void
     public typealias CollectionElementComparator = (Generator.Element,
         Generator.Element) -> Bool
     
@@ -131,6 +134,9 @@ extension CollectionType {
             }
         }
         
+        print("from: \(wrappedFromElements)")
+        print("to: \(wrappedToElements)")
+        
         if (shouldInspectInserted ||
             shouldInspectStationary ||
             shouldInspectMoved)
@@ -143,13 +149,15 @@ extension CollectionType {
                 
                 if shouldInspectInserted {
                     if fromIndex == nil {
-                        diffHandler(change: .Added, fromElement: nil,
-                            toElement: (wrappedToElement.index,
-                                wrappedToElement.element))
+                        diffHandler(change: .Added,
+                            fromIndex: nil,
+                            fromElement: nil,
+                            toIndex: wrappedToElement.index,
+                            toElement: wrappedToElement.element)
                     }
                 }
                 
-                if fromIndex != nil {
+                if let fromIndex = fromIndex {
                     let toIndex = wrappedToElement.index
                     
                     var changes: CollectionDiff = []
@@ -159,30 +167,30 @@ extension CollectionType {
                             wrappedToElement.element,
                             wrappedFromElement!.element)
                         {
-                            changes = changes.insert(.Changed)
+                            changes += .Changed
                         }
                     }
                     
-                    if fromIndex! == toIndex {
+                    if fromIndex == toIndex {
                         if (shouldInspectStationary ||
                             shouldInspectChanged)
                         {
                             diffHandler(
-                                change: changes.insert(.Stationary),
-                                fromElement: (wrappedFromElement!.index,
-                                    wrappedFromElement!.element),
-                                toElement: (wrappedToElement.index,
-                                    wrappedToElement.element))
+                                change: changes + .Stationary,
+                                fromIndex: wrappedFromElement!.index,
+                                fromElement: wrappedFromElement!.element,
+                                toIndex: wrappedToElement.index,
+                                toElement: wrappedToElement.element)
                         }
                     } else {
                         if (shouldInspectMoved ||
                             shouldInspectChanged)
                         {
-                            diffHandler(change: changes.insert(.Moved),
-                                fromElement: (wrappedFromElement!.index,
-                                    wrappedFromElement!.element),
-                                toElement: (wrappedToElement.index,
-                                    wrappedToElement.element))
+                            diffHandler(change: changes + .Moved,
+                                fromIndex: wrappedFromElement!.index,
+                                fromElement: wrappedFromElement!.element,
+                                toIndex: wrappedToElement.index,
+                                toElement: wrappedToElement.element)
                         }
                     }
                 }
@@ -201,8 +209,9 @@ extension CollectionType {
                 
                 if toIndex == nil {
                     diffHandler(change: .Deleted,
-                        fromElement: (wrappedFromElement.index,
-                            wrappedFromElement.element),
+                        fromIndex: wrappedFromElement.index,
+                        fromElement: wrappedFromElement.element,
+                        toIndex: nil,
                         toElement: nil)
                 }
                 
@@ -220,8 +229,8 @@ extension CollectionType {
 extension CollectionType where Generator.Element : Equatable {
     public typealias EquatableElementsCollectionDiffHandler = (
         change: CollectionDiff,
-        fromElement: (index: Index, element: Generator.Element)?,
-        toElement: (index: Index, element: Generator.Element)?) -> Void
+        fromIndex: Index?, fromElement: Generator.Element?,
+        toIndex: Index?, toElement: Generator.Element?) -> Void
     public typealias EquatableElementsCollectionElementComparator = (
         Generator.Element, Generator.Element) -> Bool
     
@@ -251,7 +260,7 @@ extension CollectionType where Generator.Element : Equatable {
     }
 }
 
-private class CollectionElementWrapper<Element, Index>: Equatable {
+private class CollectionElementWrapper<Element, Index>: Equatable, CustomStringConvertible {
     // typealias Element = C.Generator.Element
     // typealias Index = C.Index
     var traversed = false
@@ -267,6 +276,10 @@ private class CollectionElementWrapper<Element, Index>: Equatable {
         element = theEmenet
         self.indexComparator = equalComparator
         self.contentComparator = unchangedComparator
+    }
+    
+    var description: String {
+        return "<\(CollectionElementWrapper.self); Index = \(index); Element = \(element); Traversed = \(traversed)>>"
     }
 }
 
