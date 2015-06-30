@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630ECDCB1B424FE30072BFC6 /* TestCollectionTypeDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C70FF1B424F4E00F33DC6 /* TestCollectionTypeDiff.swift */; };
 		631552E51B2533A5009C2B92 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631552D81B2533A5009C2B92 /* Calendar.swift */; };
 		631552E61B2533A5009C2B92 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631552D81B2533A5009C2B92 /* Calendar.swift */; };
 		631552E71B2533A5009C2B92 /* CalendarCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631552D91B2533A5009C2B92 /* CalendarCache.swift */; };
@@ -74,11 +75,10 @@
 		63808DA71A99AB4C00CD8441 /* Set+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63808DA61A99AB4C00CD8441 /* Set+Operator.swift */; };
 		63808DA81A99AB4C00CD8441 /* Set+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63808DA61A99AB4C00CD8441 /* Set+Operator.swift */; };
 		63847C6119E79C0C0098BC0E /* SwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63847C5519E79C0C0098BC0E /* SwiftExt.framework */; };
-		63847C6819E79C0C0098BC0E /* Swift_Extended_Library_for_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63847C6719E79C0C0098BC0E /* Swift_Extended_Library_for_iOSTests.swift */; };
 		63847C7F19E79C200098BC0E /* SwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63847C7419E79C200098BC0E /* SwiftExt.framework */; };
-		63847C8619E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63847C8519E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift */; };
 		639BA7551B424630007319BE /* SetAlgebraType+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639BA7541B424630007319BE /* SetAlgebraType+Operator.swift */; };
 		639BA7561B424630007319BE /* SetAlgebraType+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639BA7541B424630007319BE /* SetAlgebraType+Operator.swift */; };
+		639C71001B424F4E00F33DC6 /* TestCollectionTypeDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C70FF1B424F4E00F33DC6 /* TestCollectionTypeDiff.swift */; };
 		63A084BB1A149DC90054CE84 /* Dictionary+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A084BA1A149DC90054CE84 /* Dictionary+Operator.swift */; };
 		63A084BC1A149DC90054CE84 /* Dictionary+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A084BA1A149DC90054CE84 /* Dictionary+Operator.swift */; };
 		63B2FADD1B157D7E008CD7C4 /* Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2FADC1B157D7E008CD7C4 /* Remove.swift */; };
@@ -142,13 +142,12 @@
 		63847C5919E79C0C0098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63847C6019E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-Extended-Library-for-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C6619E79C0C0098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63847C6719E79C0C0098BC0E /* Swift_Extended_Library_for_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Extended_Library_for_iOSTests.swift; sourceTree = "<group>"; };
 		63847C7419E79C200098BC0E /* SwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C7719E79C200098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63847C7E19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-Extended-Library-for-OS-XTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C8419E79C200098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63847C8519E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_Extended_Library_for_OS_XTests.swift; sourceTree = "<group>"; };
 		639BA7541B424630007319BE /* SetAlgebraType+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SetAlgebraType+Operator.swift"; sourceTree = "<group>"; };
+		639C70FF1B424F4E00F33DC6 /* TestCollectionTypeDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestCollectionTypeDiff.swift; path = "Swift-Extended-Library-Tests/TestCollectionTypeDiff.swift"; sourceTree = SOURCE_ROOT; };
 		63A084BA1A149DC90054CE84 /* Dictionary+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Operator.swift"; sourceTree = "<group>"; };
 		63B2FADC1B157D7E008CD7C4 /* Remove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remove.swift; sourceTree = "<group>"; };
 		63E899D51B0C873500C2B61E /* String+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Operator.swift"; sourceTree = "<group>"; };
@@ -191,6 +190,7 @@
 		631552D61B252DDF009C2B92 /* Swift-Extended-LibraryTests */ = {
 			isa = PBXGroup;
 			children = (
+				639C70FF1B424F4E00F33DC6 /* TestCollectionTypeDiff.swift */,
 			);
 			path = "Swift-Extended-LibraryTests";
 			sourceTree = "<group>";
@@ -281,7 +281,6 @@
 		63847C6419E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				63847C6719E79C0C0098BC0E /* Swift_Extended_Library_for_iOSTests.swift */,
 				63847C6519E79C0C0098BC0E /* Supporting Files */,
 			);
 			path = "Swift-Extended-Library-for-iOSTests";
@@ -314,7 +313,6 @@
 		63847C8219E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */ = {
 			isa = PBXGroup;
 			children = (
-				63847C8519E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift */,
 				63847C8319E79C200098BC0E /* Supporting Files */,
 			);
 			path = "Swift-Extended-Library-for-OS-XTests";
@@ -586,7 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63847C6819E79C0C0098BC0E /* Swift_Extended_Library_for_iOSTests.swift in Sources */,
+				639C71001B424F4E00F33DC6 /* TestCollectionTypeDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,7 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63847C8619E79C200098BC0E /* Swift_Extended_Library_for_OS_XTests.swift in Sources */,
+				630ECDCB1B424FE30072BFC6 /* TestCollectionTypeDiff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
