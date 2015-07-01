@@ -22,7 +22,7 @@ public func updateValue<V, B: RawRepresentable where B.RawValue == UInt>
     dictionary.updateValue(value, forKey: bitmask.rawValue)
 }
 
-public enum BitmaskFallbackPolicy: Int {
+public enum BitmaskFallbackStrategy: Int {
     case RightShift, LeftShift
     
     func fallback(value: UInt) -> UInt? {
@@ -58,14 +58,14 @@ public func valueForBitmask<V, B: RawRepresentable where
 {
     return valueForBitmask(bitmask,
         inDictionary: dictionary,
-        fallback: .RightShift)
+        fallbackStrategy: .RightShift)
 }
 
 public func valueForBitmask<V, B: RawRepresentable where
     B.RawValue == UInt>
     (bitmask: B,
     inDictionary dictionary: [UInt: V],
-    fallback: BitmaskFallbackPolicy,
+    fallbackStrategy: BitmaskFallbackStrategy,
     max: B? = nil)
     -> V?
 {
@@ -79,11 +79,11 @@ public func valueForBitmask<V, B: RawRepresentable where
     } else if bitmask.rawValue == UInt.max {
         return nil
     } else {
-        if let fallbackValue = fallback.fallback(bitmask.rawValue) {
+        if let fallbackValue = fallbackStrategy.fallback(bitmask.rawValue) {
             if let nextBitmask = B(rawValue: fallbackValue) {
                 return valueForBitmask(nextBitmask,
                     inDictionary: dictionary,
-                    fallback: fallback)
+                    fallbackStrategy: fallbackStrategy)
             }
         }
         return nil
