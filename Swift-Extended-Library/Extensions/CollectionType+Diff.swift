@@ -7,7 +7,7 @@
 //
 
 /**
-Sequence difference.
+Collection difference.
 
 - Stationary: Indicates a collection element's position is not changed.
 
@@ -61,11 +61,7 @@ CustomDebugStringConvertible, CustomStringConvertible, Hashable
         }
     }
     
-    public var debugDescription: String {
-        get {
-            return description
-        }
-    }
+    public var debugDescription: String { return description }
 }
 
 extension CollectionType {

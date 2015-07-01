@@ -77,12 +77,6 @@ final public class CollectionDiffer<C: CollectionType> {
         let toElementsIterativeDiff: CollectionDiff = [
             .Stationary, .Added, .Moved, .Changed]
         
-        let shouldIterateToElements = !inspectedDiffs.intersect(
-            toElementsIterativeDiff).isEmpty
-        
-        let shouldIterateFromElement = !inspectedDiffs.intersect(
-            fromElementsIterativeDiff).isEmpty
-        
         let wrappedFromElements = ElementWrapper.wrapCollection(
             fromCollection, equalityComparator: equalityComparator)
         
@@ -92,9 +86,7 @@ final public class CollectionDiffer<C: CollectionType> {
         let shouldInspectChanged = inspectedDiffs.contains(.Changed)
         
         // Traversal to sequence to find inserted, stationary and moved
-        for wrappedToElement in wrappedToElements
-            where shouldIterateToElements
-        {
+        for wrappedToElement in wrappedToElements {
             let wrappedFromElement = wrappedFromElements.filter(
                 {$0 == wrappedToElement}).first
             let fromIndex = wrappedFromElement?.index
@@ -128,7 +120,7 @@ final public class CollectionDiffer<C: CollectionType> {
         }
         
         for wrappedFromElement in wrappedFromElements
-            where (shouldIterateFromElement && !wrappedFromElement.traversed)
+            where !wrappedFromElement.traversed
         {
             let wrappedToElement = wrappedToElements.filter(
                 {$0 == wrappedFromElement}).first
@@ -230,7 +222,7 @@ extension CollectionDiffer {
         return self
     }
     
-    func handleChanges(changes: CollectionDiff,
+    public func handleChanges(changes: CollectionDiff,
         handler: CollectionMetaChangesHandler<Collection>.Handler)
         -> CollectionDiffer<Collection>
     {
@@ -256,9 +248,9 @@ extension CollectionDiffer {
             }
             
         } catch CollectionDiff.Error.ValidateError {
-            print("Diff is not valid: \(diff)")
+            assertionFailure("Diff is not valid: \(diff)")
         } catch {
-            print("Diff is not valid and I don't know why...")
+            assertionFailure("Diff is not valid and I don't know why...")
         }
         
     }
@@ -284,17 +276,6 @@ extension CollectionDiff {
         
         if !validDiffs.contains(self) {
             throw Error.ValidateError
-        }
-    }
-    
-    private func fallback() -> CollectionDiff? {
-        switch self {
-        case [.Stationary, .Changed]:
-            return .Changed
-        case [.Moved, .Changed]:
-            return .Changed
-        default:
-            return nil
         }
     }
 }
@@ -334,10 +315,10 @@ final private class CollectionInsertionHandler<C: CollectionType>:
         toElement: Element?,
         changed: Bool?)
     {
-        if let toIndex = toIndex, toElement = toElement {
-            if fromIndex == nil && fromElement == nil && changed == nil {
-                handler(toIndex: toIndex, toElement: toElement)
-            }
+        switch (fromIndex, fromElement, toIndex, toElement, changed) {
+        case let (nil, nil, .Some(toIndex), .Some(toElement), nil):
+            handler(toIndex: toIndex, toElement: toElement)
+        default:    return
         }
     }
 }
@@ -358,10 +339,10 @@ final private class CollectionDeletionHandler<C: CollectionType>:
         toElement: Element?,
         changed: Bool?)
     {
-        if let fromIndex = fromIndex, fromElement = fromElement {
-            if toIndex == nil && toElement == nil && changed == nil {
-                handler(fromIndex: fromIndex, fromElement: fromElement)
-            }
+        switch (fromIndex, fromElement, toIndex, toElement, changed) {
+        case let (.Some(fromIndex), .Some(fromElement), nil, nil, nil):
+            handler(fromIndex: fromIndex, fromElement: fromElement)
+        default:    return
         }
     }
 }
@@ -383,15 +364,12 @@ final private class CollectionMovingHandler<C: CollectionType>:
         toElement: Element?,
         changed: Bool?)
     {
-        if let fromIndex = fromIndex, fromElement = fromElement,
-            toIndex = toIndex, toElement = toElement
-        {
-            if fromIndex != toIndex {
-                handler(fromIndex: fromIndex,
-                    fromElement: fromElement,
-                    toIndex: toIndex,
-                    toElement: toElement)
-            }
+        switch (fromIndex, fromElement, toIndex, toElement, changed) {
+        case let (.Some(fromIndex), .Some(fromElement), .Some(toIndex),
+            .Some(toElement), _) where fromIndex != toIndex :
+            handler(fromIndex: fromIndex, fromElement: fromElement,
+                toIndex: toIndex, toElement: toElement)
+        default:    return
         }
     }
 }
@@ -414,17 +392,14 @@ final private class CollectionMovingWithChangeHandler<C: CollectionType>:
         toElement: Element?,
         changed: Bool?)
     {
-        if let fromIndex = fromIndex, fromElement = fromElement,
-            toIndex = toIndex, toElement = toElement,
-            changed = changed
-        {
-            if fromIndex != toIndex {
-                handler(fromIndex: fromIndex,
-                    fromElement: fromElement,
-                    toIndex: toIndex,
-                    toElement: toElement,
-                    changed: changed)
-            }
+        switch (fromIndex, fromElement, toIndex, toElement, changed) {
+        case let (.Some(fromIndex), .Some(fromElement), .Some(toIndex),
+            .Some(toElement), .Some(changed)) where fromIndex != toIndex :
+            
+            handler(fromIndex: fromIndex, fromElement: fromElement,
+                toIndex: toIndex, toElement: toElement,
+                changed: changed)
+        default:    return
         }
     }
 }
@@ -445,12 +420,12 @@ final private class CollectionStationaryHandler<C: CollectionType>:
         toElement: Element?,
         changed: Bool?)
     {
-        if let fromIndex = fromIndex, fromElement = fromElement,
-            toIndex = toIndex, _ = toElement
-        {
-            if fromIndex == toIndex {
-                handler(index: fromIndex, element: fromElement)
-            }
+        switch (fromIndex, fromElement, toIndex, toElement, changed) {
+        case let (.Some(fromIndex), .Some(fromElement), .Some(toIndex),
+            .Some(_), _) where fromIndex == toIndex :
+            
+            handler(index: fromIndex, element: fromElement)
+        default:    return
         }
     }
 }
@@ -472,14 +447,13 @@ final private class CollectionStationaryWithChangeHandler<C: CollectionType>:
         toElement: Element?,
         changed: Bool?)
     {
-        if let fromIndex = fromIndex, fromElement = fromElement,
-            toIndex = toIndex, _ = toElement, changed = changed
-        {
-            if fromIndex == toIndex {
-                handler(index: fromIndex,
-                    elment: fromElement,
-                    changed: changed)
-            }
+        switch (fromIndex, fromElement, toIndex, toElement, changed) {
+        case let (.Some(fromIndex), .Some(fromElement), .Some(toIndex),
+            .Some(_), .Some(changed)) where fromIndex == toIndex :
+            
+            handler(index: fromIndex, elment: fromElement,
+                changed: changed)
+        default:    return
         }
     }
 }
@@ -501,13 +475,13 @@ final private class CollectionChangedHandler<C: CollectionType>:
         toElement: Element?,
         changed: Bool?)
     {
-        if let fromIndex = fromIndex, fromElement = fromElement,
-            toIndex = toIndex, toElement = toElement, changed = changed
-        {
-            if changed == true {
-                handler(fromIndex: fromIndex, fromElement: fromElement,
-                    toIndex: toIndex, toElement: toElement)
-            }
+        switch (fromIndex, fromElement, toIndex, toElement, changed) {
+        case let (.Some(fromIndex), .Some(fromElement),
+            .Some(toIndex), .Some(toElement), .Some(true)):
+            
+            handler(fromIndex: fromIndex, fromElement: fromElement,
+                toIndex: toIndex, toElement: toElement)
+        default:    return
         }
     }
 }
@@ -532,10 +506,8 @@ final private class CollectionMetaChangesHandler<C: CollectionType>:
         changed: Bool?)
     {
         handler(chagnes: diff,
-            fromIndex: fromIndex,
-            fromElement: fromElement,
-            toIndex: toIndex,
-            toElement: toElement,
+            fromIndex: fromIndex, fromElement: fromElement,
+            toIndex: toIndex, toElement: toElement,
             changed: changed)
     }
 }
