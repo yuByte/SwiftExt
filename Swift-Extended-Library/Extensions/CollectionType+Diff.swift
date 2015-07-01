@@ -1,6 +1,6 @@
 //
 //  CollectionType+Diff.swift
-//  Swift Extended Library
+//  Swift-Extended-Library
 //
 //  Created by Manfred Lau on 10/13/14.
 //
@@ -9,15 +9,15 @@
 /**
 Sequence difference.
 
-- Stationary: Indicates a sequence element's position is not changed.
+- Stationary: Indicates a collection element's position is not changed.
 
-- Added: Indicates a sequence element is newly inserted.
+- Added: Indicates a collection element is newly inserted.
 
-- Deleted: Indicates a sequence element is deleted.
+- Deleted: Indicates a collection element is deleted.
 
-- Moved: Indicates a sequence element's position is moved.
+- Moved: Indicates a collection element's position is moved.
 
-- Changed: Indicates a sequence element's content is changed, which judged by your custom comparator.
+- Changed: Indicates a collection element's content is changed, which judged by your custom comparator.
 */
 public struct CollectionDiff: OptionSetType,
 CustomDebugStringConvertible, CustomStringConvertible, Hashable
@@ -72,7 +72,8 @@ extension CollectionType {
     public typealias CollectionDiffHandler = (
         change: CollectionDiff,
         fromIndex: Index?, fromElement: Generator.Element?,
-        toIndex: Index?, toElement: Generator.Element?) -> Void
+        toIndex: Index?, toElement: Generator.Element?,
+        changed: Bool?) -> Void
     public typealias CollectionElementComparator = (Generator.Element,
         Generator.Element) -> Bool
     /**
@@ -96,131 +97,11 @@ extension CollectionType {
         contentComparator: CollectionElementComparator,
         withHandler diffHandler: CollectionDiffHandler)
     {
-        typealias Element = Generator.Element
-        typealias Index = Self.Index
-        
-        let shouldInspectStationary = differences.contains(.Stationary)
-        let shouldInspectInserted   = differences.contains(.Added)
-        let shouldInspectDeleted    = differences.contains(.Deleted)
-        let shouldInspectMoved      = differences.contains(.Moved)
-        let shouldInspectChanged    = differences.contains(.Changed)
-        
-        var wrappedFromElements =
-            [CollectionElementWrapper<Element, Index>]()
-        var wrappedToElements =
-            [CollectionElementWrapper<Element, Index>]()
-        
-        let shouldWrap = (shouldInspectInserted ||
-            shouldInspectStationary ||
-            shouldInspectDeleted || 
-            shouldInspectMoved)
-        
-        if shouldWrap {
-            var fromIndex = self.startIndex
-            for fromElement in self {
-                let wrappedElement =
-                    CollectionElementWrapper<Element, Index>(fromIndex,
-                        fromElement, indexComparator)
-                wrappedFromElements.append(wrappedElement)
-                fromIndex = fromIndex.successor()
-            }
-            
-            var toIndex = comparedCollection.startIndex
-            for toElement in comparedCollection {
-                let wrappedElement =
-                    CollectionElementWrapper<Element, Index>(toIndex,
-                        toElement, indexComparator)
-                wrappedToElements.append(wrappedElement)
-                toIndex = toIndex.successor()
-            }
-        }
-        
-        if (shouldInspectInserted ||
-            shouldInspectStationary ||
-            shouldInspectMoved)
-        {
-            // Traversal to sequence to find inserted, stationary and moved
-            for wrappedToElement in wrappedToElements {
-                let wrappedFromElement = wrappedFromElements.filter(
-                    {$0 == wrappedToElement}).first
-                let fromIndex = wrappedFromElement?.index
-                
-                if shouldInspectInserted {
-                    if fromIndex == nil {
-                        diffHandler(change: .Added,
-                            fromIndex: nil,
-                            fromElement: nil,
-                            toIndex: wrappedToElement.index,
-                            toElement: wrappedToElement.element)
-                    }
-                }
-                
-                if let fromIndex = fromIndex {
-                    let toIndex = wrappedToElement.index
-                    
-                    var changes: CollectionDiff = []
-                    
-                    if shouldInspectChanged {
-                        if !contentComparator(
-                            wrappedToElement.element,
-                            wrappedFromElement!.element)
-                        {
-                            changes += .Changed
-                        }
-                    }
-                    
-                    if fromIndex == toIndex {
-                        if (shouldInspectStationary ||
-                            shouldInspectChanged)
-                        {
-                            diffHandler(
-                                change: changes + .Stationary,
-                                fromIndex: wrappedFromElement!.index,
-                                fromElement: wrappedFromElement!.element,
-                                toIndex: wrappedToElement.index,
-                                toElement: wrappedToElement.element)
-                        }
-                    } else {
-                        if (shouldInspectMoved ||
-                            shouldInspectChanged)
-                        {
-                            diffHandler(change: changes + .Moved,
-                                fromIndex: wrappedFromElement!.index,
-                                fromElement: wrappedFromElement!.element,
-                                toIndex: wrappedToElement.index,
-                                toElement: wrappedToElement.element)
-                        }
-                    }
-                }
-                
-                wrappedToElement.traversed = true
-                if wrappedFromElement != nil {
-                    wrappedFromElement!.traversed = true
-                }
-            }
-        }
-        
-        if shouldInspectDeleted {
-            for wrappedFromElement in wrappedFromElements {
-                let toIndex = wrappedToElements.indexOf(
-                    wrappedFromElement)
-                
-                if toIndex == nil {
-                    diffHandler(change: .Deleted,
-                        fromIndex: wrappedFromElement.index,
-                        fromElement: wrappedFromElement.element,
-                        toIndex: nil,
-                        toElement: nil)
-                }
-                
-                wrappedFromElement.traversed = true
-                
-                if toIndex != nil {
-                    let wrappedToElement = (wrappedToElements[toIndex!])
-                    wrappedToElement.traversed = true
-                }
-            }
-        }
+        self.diffFrom(comparedCollection,
+            equalityComparator: indexComparator,
+            contentComparator: contentComparator
+            ).handleChanges(differences, handler: diffHandler
+            ).commit()
     }
 }
 
@@ -228,7 +109,7 @@ extension CollectionType where Generator.Element : Equatable {
     public typealias EquatableElementsCollectionDiffHandler = (
         change: CollectionDiff,
         fromIndex: Index?, fromElement: Generator.Element?,
-        toIndex: Index?, toElement: Generator.Element?) -> Void
+        toIndex: Index?, toElement: Generator.Element?, changed: Bool?) -> Void
     public typealias EquatableElementsCollectionElementComparator = (
         Generator.Element, Generator.Element) -> Bool
     
@@ -258,9 +139,10 @@ extension CollectionType where Generator.Element : Equatable {
     }
 }
 
-internal class CollectionElementWrapper<Element, Index>: Equatable, CustomStringConvertible {
-    // typealias Element = C.Generator.Element
-    // typealias Index = C.Index
+final internal class CollectionElementWrapper<E, I>: Equatable, CustomStringConvertible {
+    internal typealias Element = E
+    internal typealias Index = I
+    
     internal var traversed = false
     internal let index: Index
     internal let element: Element
@@ -275,6 +157,22 @@ internal class CollectionElementWrapper<Element, Index>: Equatable, CustomString
     
     internal var description: String {
         return "<\(CollectionElementWrapper.self); Index = \(index); Element = \(element); Traversed = \(traversed)>>"
+    }
+    
+    internal class func wrapCollection<C: CollectionType>(collection: C,
+        equalityComparator: (C.Generator.Element, C.Generator.Element) -> Bool)
+        -> [CollectionElementWrapper<C.Generator.Element, C.Index>]
+    {
+        typealias ElementWrapper = CollectionElementWrapper<C.Generator.Element, C.Index>
+        var wrappedElements = [ElementWrapper]()
+        var index = collection.startIndex
+        for element in collection {
+            let wrappedElement = ElementWrapper(index,
+                element, equalityComparator)
+            wrappedElements.append(wrappedElement)
+            index = index.successor()
+        }
+        return wrappedElements
     }
 }
 
