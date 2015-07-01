@@ -6,7 +6,6 @@
 //
 //
 
-
 extension ExtensibleCollectionType {
     mutating public func removeDuplicates(preidicate:(Generator.Element) -> Bool) -> Self {
         var container = Self()
