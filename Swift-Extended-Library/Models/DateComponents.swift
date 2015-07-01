@@ -1,6 +1,6 @@
 //
 //  DateComponent.swift
-//  Swift Extended Library
+//  Swift-Extended-Library
 //
 //  Created by Manfred Lau on 11/12/14.
 //

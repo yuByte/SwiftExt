@@ -25,6 +25,7 @@ class TestCollectionTypeDiff: XCTestCase {
     var removed: [Int] = []
     var moved: [Int] = []
     var stationary: [Int] = []
+    var changed: [(Int, Int)] = []
     
     override func setUp() {
         super.setUp()
@@ -76,18 +77,22 @@ class TestCollectionTypeDiff: XCTestCase {
     }
     
     func testDiff() {
+        
     }
     
-    func testObjectOrientedEquatableDiff() {
-        from.diffWith(to).handleInsertion { (_, toElement) -> Void in
+    func testEquatableDiffFrom() {
+        from.diffFrom(to).handleAdded { (_, toElement) -> Void in
             self.added.append(toElement)
-        }.handleDeletion { (_, fromElement) -> Void in
+        }.handleDeleted { (_, fromElement) -> Void in
             self.removed.append(fromElement)
-        }.handleMoving { (_, fromElement, _, _) -> Void in
+        }.handleMoved { (_, fromElement, _, _) -> Void in
             self.moved.append(fromElement)
         }.handleStationary { (_, fromElement) -> Void in
             self.stationary.append(fromElement)
-        }.begin()
+        }.handleChanged({ (_, fromElement, _, toElement) -> Void in
+            let change = (fromElement, toElement)
+            self.changed.append(change)
+        }).commit()
         
         added.sortInPlace()
         removed.sortInPlace()
@@ -95,17 +100,19 @@ class TestCollectionTypeDiff: XCTestCase {
         stationary.sortInPlace()
         
         XCTAssert(toAdd == added,
-            "Equatable diff adding doesn't pass:\n\tTo add:\(toAdd)\n\tAdded:\(added)")
+            "Equatable-diff-from added items inspecting doesn't pass:\n\tTo add:\(toAdd)\n\tAdded:\(added)")
         XCTAssert(toRemove == removed,
-            "Equatable diff remove doesn't pass:\n\tTo Remove:\(toRemove)\n\tRemoved:\(removed)")
+            "Equatable-diff-from removed items inspecting doesn't pass:\n\tTo Remove:\(toRemove)\n\tRemoved:\(removed)")
         XCTAssert(toMove == moved,
-            "Equatable diff move doesn't pass:\n\tTo move:\(toMove)\n\tMoved:\(moved)")
+            "Equatable-diff-from moved items inspecting doesn't pass:\n\tTo move:\(toMove)\n\tMoved:\(moved)")
         XCTAssert(toBeStationary == stationary,
-            "Equatable diff stationary doesn't pass:\n\tTo be stationary:\(toBeStationary)\n\tStationary: \(stationary)")
+            "Equatable-diff-from stationary items inspecting doesn't pass:\n\tTo be stationary:\(toBeStationary)\n\tStationary: \(stationary)")
+        XCTAssert(changed.isEmpty,
+            "Equatable-diff-from changed items inspecting doesn't pass:\n\tChanged:\(changed)")
     }
 
     func testEquatableDiff() {
-        from.diff(to, differences: CollectionDiff.All) { (change, fromIndex, fromElement, toIndex, toElement) -> Void in
+        from.diff(to, differences: CollectionDiff.All) { (change, fromIndex, fromElement, toIndex, toElement, changed) -> Void in
             if change.contains(.Added) {
                 XCTAssert(!change.contains(.Deleted),
                     "It is impossible that \(CollectionDiff.Added) be with \(CollectionDiff.Deleted) at same time during diffing!")

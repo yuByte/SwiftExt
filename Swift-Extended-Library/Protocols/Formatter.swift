@@ -1,6 +1,6 @@
 //
 //  Formatter.swift
-//  Swift Extended Library
+//  Swift-Extended-Library
 //
 //  Created by Manfred Lau on 2/8/15.
 //

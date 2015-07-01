@@ -1,6 +1,6 @@
 //
 //  ExtensibleCollectionType.swift
-//  Swift Extended Library
+//  Swift-Extended-Library
 //
 //  Created by Manfred Lau on 1/6/15.
 //

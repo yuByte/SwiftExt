@@ -1,6 +1,6 @@
 //
 //  BitwiseOperationsType+Operator.swift
-//  Swift Extended Library
+//  Swift-Extended-Library
 //
 //  Created by Manfred Lau on 10/13/14.
 //
