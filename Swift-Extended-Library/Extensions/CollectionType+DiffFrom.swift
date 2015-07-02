@@ -489,7 +489,7 @@ final private class CollectionChangedHandler<C: CollectionType>:
 final private class CollectionMetaChangesHandler<C: CollectionType>:
     CollectionDiffHandler<C>
 {
-    typealias Handler = (chagnes: CollectionDiff,
+    typealias Handler = (changes: CollectionDiff,
         fromIndex: Index?, fromElement: Element?,
         toIndex: Index?, toElement: Element?,
         changed: Bool?) -> Void
@@ -505,7 +505,7 @@ final private class CollectionMetaChangesHandler<C: CollectionType>:
         toElement: Element?,
         changed: Bool?)
     {
-        handler(chagnes: diff,
+        handler(changes: diff,
             fromIndex: fromIndex, fromElement: fromElement,
             toIndex: toIndex, toElement: toElement,
             changed: changed)
