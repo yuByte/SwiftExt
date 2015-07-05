@@ -14,10 +14,27 @@ extension SequenceType where Generator.Element : Equatable {
     
     - returns:      A result indicates if the receiver intersects the evaluated sequence
     */
-    public func intersects(sequence: Self) -> Bool {
+    public func isIntersect(sequence: Self) -> Bool {
         for eachElement in sequence {
             if contains(eachElement) {
                 return true
+            }
+        }
+        return false
+    }
+}
+
+extension SequenceType {
+    public func isIntersect(sequence: Self,
+        @noescape predicate: (Generator.Element,
+        Generator.Element) -> Bool)
+        -> Bool
+    {
+        for eachElement in sequence {
+            for eachSelfElement in self {
+                if predicate(eachSelfElement, eachElement) {
+                    return true
+                }
             }
         }
         return false
@@ -32,34 +49,42 @@ extension ExtensibleCollectionType where Generator.Element : Equatable {
     
     - returns:      A result indicates if collectionA contains collectionB
     */
-    public func intersected
+    public func intersect
         (collection: Self,
-        handler: ((element: Self.Generator.Element, index: Self.Index?, indexInCollection: Self.Index?, contains: Bool)-> Void)? = nil)
+        handler: ((element: Self.Generator.Element,
+        index: Self.Index?,
+        indexInCollection: Self.Index?,
+        contains: Bool)-> Void)? = nil)
         -> Self
     {
         var results = Self()
         
         var intersectedElementsInColelction2 = Self()
         
-        for element1 in self {
-            let index1 = self.indexOf(element1)
-            let index2 = collection.indexOf(element1)
-            if !results.contains(element1) && index2 != nil {
-                results.append(element1)
-                intersectedElementsInColelction2.append(element1)
-                handler?(element: element1, index: index1, indexInCollection: index2, contains: true)
+        for selfElement in self {
+            let indexSelf = self.indexOf(selfElement)
+            let indexCollection = collection.indexOf(selfElement)
+            if !results.contains(selfElement) && indexCollection != nil {
+                results.append(selfElement)
+                intersectedElementsInColelction2.append(selfElement)
+                handler?(element: selfElement, index: indexSelf,
+                    indexInCollection: indexCollection, contains: true)
             } else {
-                handler?(element: element1, index: index1, indexInCollection: index2, contains: false)
+                handler?(element: selfElement, index: indexSelf,
+                    indexInCollection: indexCollection, contains: false)
             }
         }
         
         if let handler = handler {
-            for element2 in collection {
-                if !intersectedElementsInColelction2.contains(element2) {
-                    let index1 = self.indexOf(element2)
-                    let index2 = collection.indexOf(element2)
+            for elementSelf in collection {
+                if !intersectedElementsInColelction2.contains(elementSelf)
+                {
+                    let indexSelf = self.indexOf(elementSelf)
+                    let indexCollection = collection.indexOf(elementSelf)
                     
-                    handler(element: element2, index: index1, indexInCollection: index2, contains: false)
+                    handler(element: elementSelf, index: indexSelf,
+                        indexInCollection: indexCollection,
+                        contains: false)
                 }
             }
         }
