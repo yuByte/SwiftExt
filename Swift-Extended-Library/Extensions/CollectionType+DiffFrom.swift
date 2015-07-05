@@ -1,5 +1,5 @@
 //
-//  CollectionType+DiffWith.swift
+//  CollectionType+DiffFrom.swift
 //  Swift-Extended-Library
 //
 //  Created by Manfred on 6/30/15.
@@ -22,7 +22,8 @@ extension CollectionType {
 
 extension CollectionType where Generator.Element : Equatable {
     public func diffFrom(comparedCollection: Self,
-        contentComparator: CollectionDiffer<Self>.ElementComparator = {$0 == $1})
+        contentComparator: CollectionDiffer<Self>.ElementComparator
+            = {$0 == $1})
         -> CollectionDiffer<Self>
     {
         return CollectionDiffer(from: self,
@@ -103,7 +104,7 @@ final public class CollectionDiffer<C: CollectionType> {
                 }()
             
             for (diff, handlers) in diffHandlers
-                where toElementsIterativeDiff.contains(diff)
+                where !toElementsIterativeDiff.intersect(diff).isEmpty
             {
                 for eachHandler in handlers {
                     eachHandler.handleDiff(
@@ -132,7 +133,7 @@ final public class CollectionDiffer<C: CollectionType> {
             let fromElement = wrappedFromElement.element
             
             for (diff, handlers) in diffHandlers
-                where fromElementsIterativeDiff.contains(diff)
+                where !fromElementsIterativeDiff.intersect(diff).isEmpty
             {
                 for eachHandler in handlers {
                     eachHandler.handleDiff(
@@ -249,8 +250,8 @@ extension CollectionDiffer {
             
         } catch CollectionDiff.Error.ValidateError {
             assertionFailure("Diff is not valid: \(diff)")
-        } catch {
-            assertionFailure("Diff is not valid and I don't know why...")
+        } catch let error {
+            assertionFailure("Diff is not valid: \(error)")
         }
         
     }
@@ -505,7 +506,32 @@ final private class CollectionMetaChangesHandler<C: CollectionType>:
         toElement: Element?,
         changed: Bool?)
     {
-        handler(changes: diff,
+        let change: CollectionDiff = {
+            let diffs: CollectionDiff = {
+                switch (fromIndex, fromElement, toIndex, toElement, changed) {
+                case let (.Some(fromIndex), _, .Some(toIndex), _, _)
+                    where fromIndex == toIndex:
+                    return self.diff.intersect(.Stationary)
+                case let (.Some(fromIndex), _, .Some(toIndex), _, _)
+                    where fromIndex != toIndex:
+                    return self.diff.intersect(.Moved)
+                case (.Some(_), _, nil, _, _):
+                    return self.diff.intersect(.Deleted)
+                case (nil, _, .Some(_), _, _):
+                    return self.diff.intersect(.Added)
+                default: return []
+                }
+                }()
+            
+            if changed == true && self.diff.contains(.Changed) {
+                return diffs.union(.Changed)
+            }
+            
+            return diffs
+        }()
+        
+        
+        handler(changes: change,
             fromIndex: fromIndex, fromElement: fromElement,
             toIndex: toIndex, toElement: toElement,
             changed: changed)

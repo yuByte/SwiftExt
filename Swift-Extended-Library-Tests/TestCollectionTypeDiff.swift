@@ -110,7 +110,7 @@ class TestCollectionTypeDiff: XCTestCase {
         XCTAssert(changed.isEmpty,
             "Equatable-diff-from changed items inspecting doesn't pass:\n\tChanged:\(changed)")
     }
-
+    
     func testEquatableDiff() {
         from.diff(to, differences: CollectionDiff.All) { (change, fromIndex, fromElement, toIndex, toElement, changed) -> Void in
             if change.contains(.Added) {
