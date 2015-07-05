@@ -58,18 +58,19 @@ public func valueForBitmask<V, B: RawRepresentable where
 {
     return valueForBitmask(bitmask,
         inDictionary: dictionary,
-        fallbackStrategy: .RightShift)
+        fallback: .RightShift)
 }
 
 public func valueForBitmask<V, B: RawRepresentable where
     B.RawValue == UInt>
     (bitmask: B,
     inDictionary dictionary: [UInt: V],
-    fallbackStrategy: BitmaskFallbackStrategy,
+    fallback: BitmaskFallbackStrategy,
     max: B? = nil)
     -> V?
 {
     let object = dictionary[bitmask.rawValue]
+    
     if object != nil {
         return object
     } else if bitmask.rawValue == 0 {
@@ -79,11 +80,11 @@ public func valueForBitmask<V, B: RawRepresentable where
     } else if bitmask.rawValue == UInt.max {
         return nil
     } else {
-        if let fallbackValue = fallbackStrategy.fallback(bitmask.rawValue) {
+        if let fallbackValue = fallback.fallback(bitmask.rawValue) {
             if let nextBitmask = B(rawValue: fallbackValue) {
                 return valueForBitmask(nextBitmask,
                     inDictionary: dictionary,
-                    fallbackStrategy: fallbackStrategy)
+                    fallback: fallback)
             }
         }
         return nil

@@ -7,11 +7,15 @@
 //
 
 infix operator |? { associativity left precedence 120}
-public func |? <T where T: protocol<BitwiseOperationsType, Equatable>> (left: T, right: T) -> Bool {
+public func |? <T where T: protocol<BitwiseOperationsType, Equatable>>
+    (left: T, right: T) -> Bool
+{
     return (right & left) != T.allZeros
 }
 
 infix operator !|? { associativity left precedence 120}
-public func !|? <T where T: protocol<BitwiseOperationsType, Equatable>> (left: T, right: T) -> Bool {
+public func !|? <T where T: protocol<BitwiseOperationsType, Equatable>>
+    (left: T, right: T) -> Bool
+{
     return (right & left) == T.allZeros
 }

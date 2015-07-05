@@ -41,15 +41,15 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt>(bitmask: B, 
     let shouldHandleNotOccurred     = options.contains(.HandleNotOccurred)
     let shouldReverselyEnumerate    = options.contains(.ReverselyEnumerate)
     
-    let examinedRawValue    = bitmask.rawValue
-    var currentRawValue       = examinedRawValue
-    var referenceRawValue   = shouldReverselyEnumerate ? examinedRawValue : 1
+    let enumeratedRawValue  = bitmask.rawValue
+    var currentRawValue     = enumeratedRawValue
+    var referenceRawValue   = shouldReverselyEnumerate ? enumeratedRawValue : 1
     
     var shouldStop = false
     
     while currentRawValue != 0 && !shouldStop {
         if let relativeOption = B(rawValue: referenceRawValue) {
-            let hasOccurred = examinedRawValue |? referenceRawValue
+            let hasOccurred = enumeratedRawValue |? referenceRawValue
             
             if shouldHandleOccurred && hasOccurred && !shouldStop {
                 shouldStop = handler(bitmask: bitmask, bit: relativeOption)

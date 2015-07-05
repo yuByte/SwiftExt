@@ -71,7 +71,7 @@ final public class CollectionDiffer<C: CollectionType> {
     }
     
     private func diff() {
-        typealias ElementWrapper = CollectionElementWrapper<Element, Index>
+        typealias ElementWrapper = CollectionElementWrapper<Collection>
         
         let fromElementsIterativeDiff = CollectionDiff.Deleted
         
@@ -204,7 +204,8 @@ extension CollectionDiffer {
     }
     
     public func handleStationaryWithChange(
-        handler: CollectionStationaryWithChangeHandler<Collection>.Handler)
+        handler:
+        CollectionStationaryWithChangeHandler<Collection>.Handler)
         -> CollectionDiffer<Collection>
     {
         let handler = CollectionStationaryWithChangeHandler<Collection>(
@@ -431,8 +432,8 @@ final private class CollectionStationaryHandler<C: CollectionType>:
     }
 }
 
-final private class CollectionStationaryWithChangeHandler<C: CollectionType>:
-    CollectionDiffHandler<C>
+final private class CollectionStationaryWithChangeHandler<
+    C: CollectionType>: CollectionDiffHandler<C>
 {
     typealias Handler = (index: Index,
         elment: Element, changed: Bool) -> Void
@@ -508,16 +509,16 @@ final private class CollectionMetaChangesHandler<C: CollectionType>:
     {
         let change: CollectionDiff = {
             let diffs: CollectionDiff = {
-                switch (fromIndex, fromElement, toIndex, toElement, changed) {
-                case let (.Some(fromIndex), _, .Some(toIndex), _, _)
+                switch (fromIndex, fromElement, toIndex, toElement) {
+                case let (.Some(fromIndex), _, .Some(toIndex), _)
                     where fromIndex == toIndex:
                     return self.diff.intersect(.Stationary)
-                case let (.Some(fromIndex), _, .Some(toIndex), _, _)
+                case let (.Some(fromIndex), _, .Some(toIndex), _)
                     where fromIndex != toIndex:
                     return self.diff.intersect(.Moved)
-                case (.Some(_), _, nil, _, _):
+                case (.Some(_), _, nil, _):
                     return self.diff.intersect(.Deleted)
-                case (nil, _, .Some(_), _, _):
+                case (nil, _, .Some(_), _):
                     return self.diff.intersect(.Added)
                 default: return []
                 }

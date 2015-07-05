@@ -32,7 +32,10 @@ extension SequenceType {
     
     - returns:   A result indicates if the receiver contains the containedSeq
     */
-    public func contains(containedSeq: Self, @noescape predicate: (Self.Generator.Element) -> Bool) -> Bool {
+    public func contains(containedSeq: Self,
+        @noescape predicate: (Self.Generator.Element) -> Bool)
+        -> Bool
+    {
         for eachContainedElement in containedSeq {
             if !predicate(eachContainedElement) {
                 return false

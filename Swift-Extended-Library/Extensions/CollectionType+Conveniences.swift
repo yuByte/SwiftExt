@@ -18,7 +18,8 @@ extension CollectionType {
         if startIndex == endIndex {
             return nil
         } else {
-            return advance(startIndex, distance(startIndex, endIndex) - Self.Index.Distance(1))
+            return advance(startIndex,
+                distance(startIndex, endIndex) - Self.Index.Distance(1))
         }
     }
 }

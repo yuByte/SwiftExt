@@ -8,7 +8,11 @@
 
 import Swift
 
-extension RangeReplaceableCollectionType where Generator.Element : Equatable, Generator.Element == _Element, Index: protocol<Comparable, ForwardIndexType> {
+extension RangeReplaceableCollectionType where
+Generator.Element : Equatable,
+Generator.Element == _Element,
+Index: protocol<Comparable, ForwardIndexType>
+{
     mutating public func removeIndices(indices: [Self.Index]) -> Self
     {
         var removed = Self()
@@ -16,7 +20,8 @@ extension RangeReplaceableCollectionType where Generator.Element : Equatable, Ge
         let sortedIndices = indices.sort { $0 < $1}
         
         for eachIndex in sortedIndices {
-            let finalIndex = advance(eachIndex, distance(removed.endIndex, removed.startIndex))
+            let finalIndex = advance(eachIndex,
+                distance(removed.endIndex, removed.startIndex))
             let target = self[finalIndex]
             removed.append(target)
             removeAtIndex(finalIndex)
@@ -26,7 +31,11 @@ extension RangeReplaceableCollectionType where Generator.Element : Equatable, Ge
     }
 }
 
-extension RangeReplaceableCollectionType where Generator.Element : Equatable, Generator.Element == _Element, Index: protocol<Comparable, ForwardIndexType> {
+extension RangeReplaceableCollectionType where
+Generator.Element : Equatable,
+Generator.Element == _Element,
+Index: protocol<Comparable, ForwardIndexType>
+{
     mutating public func remove(elements: Self) -> Self
     {
         var indicesToBeRemoved: [Self.Index] = []
@@ -42,7 +51,8 @@ extension RangeReplaceableCollectionType where Generator.Element : Equatable, Ge
         let sortedIndicesToBeRemoved = indicesToBeRemoved.sort {$0 < $1}
         
         for eachIndex in sortedIndicesToBeRemoved {
-            let finalIndex = advance(eachIndex, distance(removed.endIndex, removed.startIndex))
+            let finalIndex = advance(eachIndex,
+                distance(removed.endIndex, removed.startIndex))
             let target = self[finalIndex]
             removed.append(target)
             removeAtIndex(finalIndex)
