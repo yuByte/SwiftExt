@@ -88,7 +88,8 @@ extension CollectionType {
     - parameter     changesHandler:          The handler being used to handle captured difference
     
     */
-    public func diff(comparedCollection: Self, differences: CollectionDiff,
+    public func diff(comparedCollection: Self,
+        differences: CollectionDiff,
         indexComparator: CollectionElementComparator,
         contentComparator: CollectionElementComparator,
         withHandler diffHandler: CollectionDiffHandler)
@@ -105,7 +106,8 @@ extension CollectionType where Generator.Element : Equatable {
     public typealias EquatableElementsCollectionDiffHandler = (
         change: CollectionDiff,
         fromIndex: Index?, fromElement: Generator.Element?,
-        toIndex: Index?, toElement: Generator.Element?, changed: Bool?) -> Void
+        toIndex: Index?, toElement: Generator.Element?,
+        changed: Bool?) -> Void
     public typealias EquatableElementsCollectionElementComparator = (
         Generator.Element, Generator.Element) -> Bool
     
@@ -135,9 +137,11 @@ extension CollectionType where Generator.Element : Equatable {
     }
 }
 
-final internal class CollectionElementWrapper<E, I>: Equatable, CustomStringConvertible {
-    internal typealias Element = E
-    internal typealias Index = I
+final internal class CollectionElementWrapper<C: CollectionType>: Equatable,
+CustomStringConvertible
+{
+    internal typealias Element = C.Generator.Element
+    internal typealias Index = C.Index
     
     internal var traversed = false
     internal let index: Index
@@ -156,10 +160,11 @@ final internal class CollectionElementWrapper<E, I>: Equatable, CustomStringConv
     }
     
     internal class func wrapCollection<C: CollectionType>(collection: C,
-        equalityComparator: (C.Generator.Element, C.Generator.Element) -> Bool)
-        -> [CollectionElementWrapper<C.Generator.Element, C.Index>]
+        equalityComparator:
+            (C.Generator.Element, C.Generator.Element) -> Bool)
+        -> [CollectionElementWrapper<C>]
     {
-        typealias ElementWrapper = CollectionElementWrapper<C.Generator.Element, C.Index>
+        typealias ElementWrapper = CollectionElementWrapper<C>
         var wrappedElements = [ElementWrapper]()
         var index = collection.startIndex
         for element in collection {
@@ -172,9 +177,9 @@ final internal class CollectionElementWrapper<E, I>: Equatable, CustomStringConv
     }
 }
 
-internal func == <Element, Index>
-    (left: CollectionElementWrapper<Element, Index>,
-    right: CollectionElementWrapper<Element, Index>) -> Bool
+internal func == <C: CollectionType>
+    (left: CollectionElementWrapper<C>,
+    right: CollectionElementWrapper<C>) -> Bool
 {
     return (left.traversed == right.traversed &&
         left.equalityComparator(left.element, right.element))
