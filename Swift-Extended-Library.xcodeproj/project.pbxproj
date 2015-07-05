@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630B4D8A1B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 630B4D891B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		630B4D8F1B48DDAA00830454 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631643C81A5BAFDC00DE70DC /* Power.swift */; };
+		630B4D901B48DDAA00830454 /* Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63730D651A5DB9DF0011552E /* Contains.swift */; };
+		630B4D911B48DDAA00830454 /* Intersects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63730D6A1A5DC3420011552E /* Intersects.swift */; };
+		630B4D921B48DDAA00830454 /* Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2FADC1B157D7E008CD7C4 /* Remove.swift */; };
+		630B4D931B48DDAE00830454 /* CustomRecursiveStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631643BA1A5BA33600DE70DC /* CustomRecursiveStringConvertible.swift */; };
+		630B4D941B48DDB600830454 /* Logical XOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634316F01AA7F7CD0095F466 /* Logical XOR.swift */; };
+		630B4D951B48DDB800830454 /* SetAlgebraType+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639BA7541B424630007319BE /* SetAlgebraType+Operator.swift */; };
+		630B4D961B48DDC000830454 /* Set+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63808DA61A99AB4C00CD8441 /* Set+Operator.swift */; };
+		630B4D971B48DDC000830454 /* Array+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6316ECA619F48FB200B31AA5 /* Array+Operator.swift */; };
+		630B4D981B48DDC000830454 /* CollectionType+Conveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631552FF1B2535CC009C2B92 /* CollectionType+Conveniences.swift */; };
+		630B4D991B48DDC000830454 /* NumberTypes+LiteralConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631643C51A5BA4B000DE70DC /* NumberTypes+LiteralConvertible.swift */; };
+		630B4D9A1B48DDC000830454 /* CollectionType+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FF79219EB88C0004F741C /* CollectionType+Diff.swift */; };
+		630B4D9B1B48DDC000830454 /* CollectionType+DiffFrom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635BB7AD1B42CBA6001B062C /* CollectionType+DiffFrom.swift */; };
+		630B4D9C1B48DDC000830454 /* BitwiseOperationsType+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FF79519EB88D4004F741C /* BitwiseOperationsType+Operator.swift */; };
+		630B4D9D1B48DDC000830454 /* RawRepresentable+Enumerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C04DC1B3505D50069F7CC /* RawRepresentable+Enumerate.swift */; };
+		630B4D9E1B48DDC000830454 /* Dictionary+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A084BA1A149DC90054CE84 /* Dictionary+Operator.swift */; };
+		630B4D9F1B48DDC000830454 /* Dictionary+BitmaskAccessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631643BF1A5BA39100DE70DC /* Dictionary+BitmaskAccessing.swift */; };
+		630B4DA01B48DDC000830454 /* ExtensibleCollectionType+RemoveDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631729FE1A5B2A5B00B2AE2F /* ExtensibleCollectionType+RemoveDuplicates.swift */; };
+		630B4DA11B48DDC000830454 /* String+Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E899D51B0C873500C2B61E /* String+Operator.swift */; };
+		630B4DA21B48DDCC00830454 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631552DF1B2533A5009C2B92 /* Date.swift */; };
+		630B4DA31B48DDCC00830454 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631552E31B2533A5009C2B92 /* TimeInterval.swift */; };
+		630B4DA41B48DDCC00830454 /* Fraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631643C21A5BA3FC00DE70DC /* Fraction.swift */; };
 		630ECDCB1B424FE30072BFC6 /* TestCollectionTypeDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639C70FF1B424F4E00F33DC6 /* TestCollectionTypeDiff.swift */; };
 		631552F31B2533A5009C2B92 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631552DF1B2533A5009C2B92 /* Date.swift */; };
 		631552F41B2533A5009C2B92 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631552DF1B2533A5009C2B92 /* Date.swift */; };
@@ -75,6 +98,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		630B4D871B48DDA000830454 /* SwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		630B4D891B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Extended-Library-for-watchOS.h"; sourceTree = "<group>"; };
+		630B4D8B1B48DDA000830454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631552D81B2533A5009C2B92 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		631552D91B2533A5009C2B92 /* CalendarCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCache.swift; sourceTree = "<group>"; };
 		631552DA1B2533A5009C2B92 /* CalendarIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarIdentifiers.swift; sourceTree = "<group>"; };
@@ -124,6 +150,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		630B4D831B48DDA000830454 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63847C5119E79C0C0098BC0E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,6 +190,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630B4D881B48DDA000830454 /* Swift-Extended-Library-for-watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				630B4D891B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h */,
+				630B4D8B1B48DDA000830454 /* Info.plist */,
+			);
+			path = "Swift-Extended-Library-for-watchOS";
+			sourceTree = "<group>";
+		};
+		630B4DA51B48DDD700830454 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				63847C5719E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */,
+				63847C6419E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */,
+				63847C7519E79C200098BC0E /* Swift-Extended-Library-for-OS-X */,
+				63847C8219E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */,
+				630B4D881B48DDA000830454 /* Swift-Extended-Library-for-watchOS */,
+			);
+			name = Targets;
+			sourceTree = "<group>";
+		};
 		631552D61B252DDF009C2B92 /* Swift-Extended-LibraryTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,10 +267,7 @@
 			children = (
 				63847C8D19E79C540098BC0E /* Swift-Extended-Library */,
 				631552D61B252DDF009C2B92 /* Swift-Extended-LibraryTests */,
-				63847C5719E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */,
-				63847C6419E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */,
-				63847C7519E79C200098BC0E /* Swift-Extended-Library-for-OS-X */,
-				63847C8219E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */,
+				630B4DA51B48DDD700830454 /* Targets */,
 				63847C5619E79C0C0098BC0E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -228,6 +279,7 @@
 				63847C6019E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests.xctest */,
 				63847C7419E79C200098BC0E /* SwiftExt.framework */,
 				63847C7E19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests.xctest */,
+				630B4D871B48DDA000830454 /* SwiftExt.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,6 +392,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		630B4D841B48DDA000830454 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630B4D8A1B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63847C5219E79C0C0098BC0E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,6 +417,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		630B4D861B48DDA000830454 /* Swift-Extended-Library-for-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 630B4D8E1B48DDA000830454 /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-watchOS" */;
+			buildPhases = (
+				630B4D821B48DDA000830454 /* Sources */,
+				630B4D831B48DDA000830454 /* Frameworks */,
+				630B4D841B48DDA000830454 /* Headers */,
+				630B4D851B48DDA000830454 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Swift-Extended-Library-for-watchOS";
+			productName = "Swift-Extended-Library-for-watchOS";
+			productReference = 630B4D871B48DDA000830454 /* SwiftExt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		63847C5419E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63847C6919E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-iOS" */;
@@ -438,6 +516,9 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
+					630B4D861B48DDA000830454 = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					63847C5419E79C0C0098BC0E = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = A8KGC2QQ74;
@@ -470,11 +551,19 @@
 				63847C5F19E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */,
 				63847C7319E79C200098BC0E /* Swift-Extended-Library-for-OS X */,
 				63847C7D19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */,
+				630B4D861B48DDA000830454 /* Swift-Extended-Library-for-watchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		630B4D851B48DDA000830454 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63847C5319E79C0C0098BC0E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,6 +595,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		630B4D821B48DDA000830454 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630B4D971B48DDC000830454 /* Array+Operator.swift in Sources */,
+				630B4D9E1B48DDC000830454 /* Dictionary+Operator.swift in Sources */,
+				630B4D9F1B48DDC000830454 /* Dictionary+BitmaskAccessing.swift in Sources */,
+				630B4D961B48DDC000830454 /* Set+Operator.swift in Sources */,
+				630B4D9A1B48DDC000830454 /* CollectionType+Diff.swift in Sources */,
+				630B4D951B48DDB800830454 /* SetAlgebraType+Operator.swift in Sources */,
+				630B4D981B48DDC000830454 /* CollectionType+Conveniences.swift in Sources */,
+				630B4DA31B48DDCC00830454 /* TimeInterval.swift in Sources */,
+				630B4D991B48DDC000830454 /* NumberTypes+LiteralConvertible.swift in Sources */,
+				630B4D901B48DDAA00830454 /* Contains.swift in Sources */,
+				630B4D9C1B48DDC000830454 /* BitwiseOperationsType+Operator.swift in Sources */,
+				630B4DA11B48DDC000830454 /* String+Operator.swift in Sources */,
+				630B4DA21B48DDCC00830454 /* Date.swift in Sources */,
+				630B4DA01B48DDC000830454 /* ExtensibleCollectionType+RemoveDuplicates.swift in Sources */,
+				630B4D921B48DDAA00830454 /* Remove.swift in Sources */,
+				630B4D9B1B48DDC000830454 /* CollectionType+DiffFrom.swift in Sources */,
+				630B4D8F1B48DDAA00830454 /* Power.swift in Sources */,
+				630B4D9D1B48DDC000830454 /* RawRepresentable+Enumerate.swift in Sources */,
+				630B4D911B48DDAA00830454 /* Intersects.swift in Sources */,
+				630B4D941B48DDB600830454 /* Logical XOR.swift in Sources */,
+				630B4D931B48DDAE00830454 /* CustomRecursiveStringConvertible.swift in Sources */,
+				630B4DA41B48DDCC00830454 /* Fraction.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63847C5019E79C0C0098BC0E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -596,6 +714,113 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		630B4D8C1B48DDA000830454 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Swift-Extended-Library-for-watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.Swift-Extended-Library-for-watchOS";
+				PRODUCT_NAME = SwiftExt;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		630B4D8D1B48DDA000830454 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Swift-Extended-Library-for-watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.Swift-Extended-Library-for-watchOS";
+				PRODUCT_NAME = SwiftExt;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		63847C4E19E79B8C0098BC0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1021,6 +1246,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		630B4D8E1B48DDA000830454 /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630B4D8C1B48DDA000830454 /* Debug */,
+				630B4D8D1B48DDA000830454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		63847C4D19E79B8C0098BC0E /* Build configuration list for PBXProject "Swift-Extended-Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
