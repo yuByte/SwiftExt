@@ -7,7 +7,10 @@
 //
 
 extension ExtensibleCollectionType {
-    mutating public func removeDuplicates(preidicate:(Generator.Element) -> Bool) -> Self {
+    mutating public func removeDuplicates(
+        @noescape preidicate:(Generator.Element) -> Bool)
+        -> Self
+    {
         var container = Self()
         var duplicates = Self()
         
@@ -24,7 +27,9 @@ extension ExtensibleCollectionType {
         return duplicates
     }
     
-    public func unique(preidicate:(Generator.Element) -> Bool) -> Self {
+    public func unique(@noescape preidicate:(Generator.Element) -> Bool)
+        -> Self
+    {
         var container = Self()
         
         for element in self {
