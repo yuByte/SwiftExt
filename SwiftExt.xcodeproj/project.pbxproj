@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		630B4D8A1B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 630B4D891B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		630B4D8F1B48DDAA00830454 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631643C81A5BAFDC00DE70DC /* Power.swift */; };
 		630B4D901B48DDAA00830454 /* Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63730D651A5DB9DF0011552E /* Contains.swift */; };
 		630B4D911B48DDAA00830454 /* Intersects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63730D6A1A5DC3420011552E /* Intersects.swift */; };
@@ -86,20 +85,19 @@
 			containerPortal = 63847C4A19E79B8C0098BC0E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 63847C5419E79C0C0098BC0E;
-			remoteInfo = "Swift-Extended-Library-for-iOS";
+			remoteInfo = "SwiftExt-iOS";
 		};
 		63847C8019E79C200098BC0E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63847C4A19E79B8C0098BC0E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 63847C7319E79C200098BC0E;
-			remoteInfo = "Swift-Extended-Library-for-OS-X";
+			remoteInfo = "SwiftExt-OS-X";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		630B4D871B48DDA000830454 /* SwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		630B4D891B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift-Extended-Library-for-watchOS.h"; sourceTree = "<group>"; };
 		630B4D8B1B48DDA000830454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631552D81B2533A5009C2B92 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		631552D91B2533A5009C2B92 /* CalendarCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCache.swift; sourceTree = "<group>"; };
@@ -136,14 +134,14 @@
 		63808DA61A99AB4C00CD8441 /* Set+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+Operator.swift"; sourceTree = "<group>"; };
 		63847C5519E79C0C0098BC0E /* SwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C5919E79C0C0098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63847C6019E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-Extended-Library-for-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63847C6019E79C0C0098BC0E /* SwiftExt-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftExt-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C6619E79C0C0098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63847C7419E79C200098BC0E /* SwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C7719E79C200098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63847C7E19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-Extended-Library-for-OS-XTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63847C7E19E79C200098BC0E /* SwiftExt-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftExt-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63847C8419E79C200098BC0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639BA7541B424630007319BE /* SetAlgebraType+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SetAlgebraType+Operator.swift"; sourceTree = "<group>"; };
-		639C70FF1B424F4E00F33DC6 /* TestCollectionTypeDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestCollectionTypeDiff.swift; path = "Swift-Extended-Library-Tests/TestCollectionTypeDiff.swift"; sourceTree = SOURCE_ROOT; };
+		639C70FF1B424F4E00F33DC6 /* TestCollectionTypeDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestCollectionTypeDiff.swift; path = "SwiftExt-Tests/TestCollectionTypeDiff.swift"; sourceTree = SOURCE_ROOT; };
 		63A084BA1A149DC90054CE84 /* Dictionary+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Operator.swift"; sourceTree = "<group>"; };
 		63B2FADC1B157D7E008CD7C4 /* Remove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Remove.swift; sourceTree = "<group>"; };
 		63E899D51B0C873500C2B61E /* String+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Operator.swift"; sourceTree = "<group>"; };
@@ -190,33 +188,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		630B4D881B48DDA000830454 /* Swift-Extended-Library-for-watchOS */ = {
+		630B4D881B48DDA000830454 /* SwiftExt-watchOS */ = {
 			isa = PBXGroup;
 			children = (
-				630B4D891B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h */,
 				630B4D8B1B48DDA000830454 /* Info.plist */,
 			);
-			path = "Swift-Extended-Library-for-watchOS";
+			path = "SwiftExt-watchOS";
 			sourceTree = "<group>";
 		};
 		630B4DA51B48DDD700830454 /* Targets */ = {
 			isa = PBXGroup;
 			children = (
-				63847C5719E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */,
-				63847C6419E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */,
-				63847C7519E79C200098BC0E /* Swift-Extended-Library-for-OS-X */,
-				63847C8219E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */,
-				630B4D881B48DDA000830454 /* Swift-Extended-Library-for-watchOS */,
+				63847C5719E79C0C0098BC0E /* SwiftExt-iOS */,
+				63847C6419E79C0C0098BC0E /* SwiftExt-iOSTests */,
+				63847C7519E79C200098BC0E /* SwiftExt-OS-X */,
+				63847C8219E79C200098BC0E /* SwiftExt-OS-XTests */,
+				630B4D881B48DDA000830454 /* SwiftExt-watchOS */,
 			);
 			name = Targets;
 			sourceTree = "<group>";
 		};
-		631552D61B252DDF009C2B92 /* Swift-Extended-LibraryTests */ = {
+		631552D61B252DDF009C2B92 /* SwiftExtTests */ = {
 			isa = PBXGroup;
 			children = (
 				639C70FF1B424F4E00F33DC6 /* TestCollectionTypeDiff.swift */,
 			);
-			path = "Swift-Extended-LibraryTests";
+			path = SwiftExtTests;
 			sourceTree = "<group>";
 		};
 		631643B81A5BA2FD00DE70DC /* Functions */ = {
@@ -265,8 +262,8 @@
 		63847C4919E79B8C0098BC0E = {
 			isa = PBXGroup;
 			children = (
-				63847C8D19E79C540098BC0E /* Swift-Extended-Library */,
-				631552D61B252DDF009C2B92 /* Swift-Extended-LibraryTests */,
+				63847C8D19E79C540098BC0E /* SwiftExt */,
+				631552D61B252DDF009C2B92 /* SwiftExtTests */,
 				630B4DA51B48DDD700830454 /* Targets */,
 				63847C5619E79C0C0098BC0E /* Products */,
 			);
@@ -276,20 +273,20 @@
 			isa = PBXGroup;
 			children = (
 				63847C5519E79C0C0098BC0E /* SwiftExt.framework */,
-				63847C6019E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests.xctest */,
+				63847C6019E79C0C0098BC0E /* SwiftExt-iOSTests.xctest */,
 				63847C7419E79C200098BC0E /* SwiftExt.framework */,
-				63847C7E19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests.xctest */,
+				63847C7E19E79C200098BC0E /* SwiftExt-iOSTests.xctest */,
 				630B4D871B48DDA000830454 /* SwiftExt.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		63847C5719E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */ = {
+		63847C5719E79C0C0098BC0E /* SwiftExt-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				63847C5819E79C0C0098BC0E /* Supporting Files */,
 			);
-			path = "Swift-Extended-Library-for-iOS";
+			path = "SwiftExt-iOS";
 			sourceTree = "<group>";
 		};
 		63847C5819E79C0C0098BC0E /* Supporting Files */ = {
@@ -300,12 +297,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63847C6419E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */ = {
+		63847C6419E79C0C0098BC0E /* SwiftExt-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
 				63847C6519E79C0C0098BC0E /* Supporting Files */,
 			);
-			path = "Swift-Extended-Library-for-iOSTests";
+			path = "SwiftExt-iOSTests";
 			sourceTree = "<group>";
 		};
 		63847C6519E79C0C0098BC0E /* Supporting Files */ = {
@@ -316,12 +313,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63847C7519E79C200098BC0E /* Swift-Extended-Library-for-OS-X */ = {
+		63847C7519E79C200098BC0E /* SwiftExt-OS-X */ = {
 			isa = PBXGroup;
 			children = (
 				63847C7619E79C200098BC0E /* Supporting Files */,
 			);
-			path = "Swift-Extended-Library-for-OS-X";
+			path = "SwiftExt-OS-X";
 			sourceTree = "<group>";
 		};
 		63847C7619E79C200098BC0E /* Supporting Files */ = {
@@ -332,12 +329,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63847C8219E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */ = {
+		63847C8219E79C200098BC0E /* SwiftExt-OS-XTests */ = {
 			isa = PBXGroup;
 			children = (
 				63847C8319E79C200098BC0E /* Supporting Files */,
 			);
-			path = "Swift-Extended-Library-for-OS-XTests";
+			path = "SwiftExt-OS-XTests";
 			sourceTree = "<group>";
 		};
 		63847C8319E79C200098BC0E /* Supporting Files */ = {
@@ -348,7 +345,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63847C8D19E79C540098BC0E /* Swift-Extended-Library */ = {
+		63847C8D19E79C540098BC0E /* SwiftExt */ = {
 			isa = PBXGroup;
 			children = (
 				631643B81A5BA2FD00DE70DC /* Functions */,
@@ -357,7 +354,7 @@
 				63847C8E19E79D4A0098BC0E /* Controllers */,
 				63847C8F19E79D4A0098BC0E /* Models */,
 			);
-			path = "Swift-Extended-Library";
+			path = SwiftExt;
 			sourceTree = "<group>";
 		};
 		63847C8E19E79D4A0098BC0E /* Controllers */ = {
@@ -396,7 +393,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630B4D8A1B48DDA000830454 /* Swift-Extended-Library-for-watchOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,9 +413,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		630B4D861B48DDA000830454 /* Swift-Extended-Library-for-watchOS */ = {
+		630B4D861B48DDA000830454 /* SwiftExt-watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 630B4D8E1B48DDA000830454 /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-watchOS" */;
+			buildConfigurationList = 630B4D8E1B48DDA000830454 /* Build configuration list for PBXNativeTarget "SwiftExt-watchOS" */;
 			buildPhases = (
 				630B4D821B48DDA000830454 /* Sources */,
 				630B4D831B48DDA000830454 /* Frameworks */,
@@ -430,14 +426,14 @@
 			);
 			dependencies = (
 			);
-			name = "Swift-Extended-Library-for-watchOS";
-			productName = "Swift-Extended-Library-for-watchOS";
+			name = "SwiftExt-watchOS";
+			productName = "SwiftExt-watchOS";
 			productReference = 630B4D871B48DDA000830454 /* SwiftExt.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		63847C5419E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */ = {
+		63847C5419E79C0C0098BC0E /* SwiftExt-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63847C6919E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-iOS" */;
+			buildConfigurationList = 63847C6919E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "SwiftExt-iOS" */;
 			buildPhases = (
 				63847C5019E79C0C0098BC0E /* Sources */,
 				63847C5119E79C0C0098BC0E /* Frameworks */,
@@ -448,14 +444,14 @@
 			);
 			dependencies = (
 			);
-			name = "Swift-Extended-Library-for-iOS";
-			productName = "Swift-Extended-Library-for-iOS";
+			name = "SwiftExt-iOS";
+			productName = "SwiftExt-iOS";
 			productReference = 63847C5519E79C0C0098BC0E /* SwiftExt.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		63847C5F19E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */ = {
+		63847C5F19E79C0C0098BC0E /* SwiftExt-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63847C6C19E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-iOSTests" */;
+			buildConfigurationList = 63847C6C19E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "SwiftExt-iOSTests" */;
 			buildPhases = (
 				63847C5C19E79C0C0098BC0E /* Sources */,
 				63847C5D19E79C0C0098BC0E /* Frameworks */,
@@ -466,14 +462,14 @@
 			dependencies = (
 				63847C6319E79C0C0098BC0E /* PBXTargetDependency */,
 			);
-			name = "Swift-Extended-Library-for-iOSTests";
-			productName = "Swift-Extended-Library-for-iOSTests";
-			productReference = 63847C6019E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests.xctest */;
+			name = "SwiftExt-iOSTests";
+			productName = "SwiftExt-iOSTests";
+			productReference = 63847C6019E79C0C0098BC0E /* SwiftExt-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		63847C7319E79C200098BC0E /* Swift-Extended-Library-for-OS X */ = {
+		63847C7319E79C200098BC0E /* SwiftExt-OS X */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63847C8719E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-OS X" */;
+			buildConfigurationList = 63847C8719E79C200098BC0E /* Build configuration list for PBXNativeTarget "SwiftExt-OS X" */;
 			buildPhases = (
 				63847C6F19E79C200098BC0E /* Sources */,
 				63847C7019E79C200098BC0E /* Frameworks */,
@@ -484,14 +480,14 @@
 			);
 			dependencies = (
 			);
-			name = "Swift-Extended-Library-for-OS X";
-			productName = "Swift-Extended-Library-for-OS-X";
+			name = "SwiftExt-OS X";
+			productName = "SwiftExt-OS-X";
 			productReference = 63847C7419E79C200098BC0E /* SwiftExt.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		63847C7D19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */ = {
+		63847C7D19E79C200098BC0E /* SwiftExt-OS-XTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63847C8A19E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-OS-XTests" */;
+			buildConfigurationList = 63847C8A19E79C200098BC0E /* Build configuration list for PBXNativeTarget "SwiftExt-OS-XTests" */;
 			buildPhases = (
 				63847C7A19E79C200098BC0E /* Sources */,
 				63847C7B19E79C200098BC0E /* Frameworks */,
@@ -502,9 +498,9 @@
 			dependencies = (
 				63847C8119E79C200098BC0E /* PBXTargetDependency */,
 			);
-			name = "Swift-Extended-Library-for-OS-XTests";
-			productName = "Swift-Extended-Library-for-OS-XTests";
-			productReference = 63847C7E19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests.xctest */;
+			name = "SwiftExt-OS-XTests";
+			productName = "SwiftExt-OS-XTests";
+			productReference = 63847C7E19E79C200098BC0E /* SwiftExt-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -535,7 +531,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 63847C4D19E79B8C0098BC0E /* Build configuration list for PBXProject "Swift-Extended-Library" */;
+			buildConfigurationList = 63847C4D19E79B8C0098BC0E /* Build configuration list for PBXProject "SwiftExt" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -547,11 +543,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				63847C5419E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */,
-				63847C5F19E79C0C0098BC0E /* Swift-Extended-Library-for-iOSTests */,
-				63847C7319E79C200098BC0E /* Swift-Extended-Library-for-OS X */,
-				63847C7D19E79C200098BC0E /* Swift-Extended-Library-for-OS-XTests */,
-				630B4D861B48DDA000830454 /* Swift-Extended-Library-for-watchOS */,
+				63847C5419E79C0C0098BC0E /* SwiftExt-iOS */,
+				63847C5F19E79C0C0098BC0E /* SwiftExt-iOSTests */,
+				63847C7319E79C200098BC0E /* SwiftExt-OS X */,
+				63847C7D19E79C200098BC0E /* SwiftExt-OS-XTests */,
+				630B4D861B48DDA000830454 /* SwiftExt-watchOS */,
 			);
 		};
 /* End PBXProject section */
@@ -703,12 +699,12 @@
 /* Begin PBXTargetDependency section */
 		63847C6319E79C0C0098BC0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63847C5419E79C0C0098BC0E /* Swift-Extended-Library-for-iOS */;
+			target = 63847C5419E79C0C0098BC0E /* SwiftExt-iOS */;
 			targetProxy = 63847C6219E79C0C0098BC0E /* PBXContainerItemProxy */;
 		};
 		63847C8119E79C200098BC0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63847C7319E79C200098BC0E /* Swift-Extended-Library-for-OS X */;
+			target = 63847C7319E79C200098BC0E /* SwiftExt-OS X */;
 			targetProxy = 63847C8019E79C200098BC0E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -731,7 +727,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -753,11 +748,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-watchOS/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.Swift-Extended-Library-for-watchOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.SwiftExt-watchOS";
 				PRODUCT_NAME = SwiftExt;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -786,7 +781,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -803,11 +797,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-watchOS/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-watchOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.Swift-Extended-Library-for-watchOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.SwiftExt-watchOS";
 				PRODUCT_NAME = SwiftExt;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -856,7 +850,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yu-Long Li (DWMG7F2HTD)";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -878,7 +871,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-iOS/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -913,7 +906,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yu Long Li";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -929,7 +921,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-iOS/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -985,13 +977,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-iOSTests/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SwiftExt-iOSTests";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -1030,12 +1022,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-iOSTests/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-iOSTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SwiftExt-iOSTests";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1059,7 +1051,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer: Yu-Long Li (DWMG7F2HTD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1083,7 +1074,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-OS-X/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-OS-X/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1117,7 +1108,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer: Yu-Long Li (DWMG7F2HTD)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1135,7 +1125,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-OS-X/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-OS-X/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1188,13 +1178,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-OS-XTests/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-OS-XTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SwiftExt-iOSTests";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -1232,12 +1222,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Swift-Extended-Library-for-OS-XTests/Info.plist";
+				INFOPLIST_FILE = "SwiftExt-OS-XTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WeZZard.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "SwiftExt-iOSTests";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1245,7 +1235,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		630B4D8E1B48DDA000830454 /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-watchOS" */ = {
+		630B4D8E1B48DDA000830454 /* Build configuration list for PBXNativeTarget "SwiftExt-watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				630B4D8C1B48DDA000830454 /* Debug */,
@@ -1254,7 +1244,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63847C4D19E79B8C0098BC0E /* Build configuration list for PBXProject "Swift-Extended-Library" */ = {
+		63847C4D19E79B8C0098BC0E /* Build configuration list for PBXProject "SwiftExt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C4E19E79B8C0098BC0E /* Debug */,
@@ -1263,7 +1253,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63847C6919E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-iOS" */ = {
+		63847C6919E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "SwiftExt-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C6A19E79C0C0098BC0E /* Debug */,
@@ -1272,7 +1262,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63847C6C19E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-iOSTests" */ = {
+		63847C6C19E79C0C0098BC0E /* Build configuration list for PBXNativeTarget "SwiftExt-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C6D19E79C0C0098BC0E /* Debug */,
@@ -1281,7 +1271,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63847C8719E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-OS X" */ = {
+		63847C8719E79C200098BC0E /* Build configuration list for PBXNativeTarget "SwiftExt-OS X" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C8819E79C200098BC0E /* Debug */,
@@ -1290,7 +1280,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63847C8A19E79C200098BC0E /* Build configuration list for PBXNativeTarget "Swift-Extended-Library-for-OS-XTests" */ = {
+		63847C8A19E79C200098BC0E /* Build configuration list for PBXNativeTarget "SwiftExt-OS-XTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63847C8B19E79C200098BC0E /* Debug */,
