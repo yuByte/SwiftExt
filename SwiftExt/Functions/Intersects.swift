@@ -41,7 +41,7 @@ extension SequenceType {
     }
 }
 
-extension ExtensibleCollectionType where Generator.Element : Equatable {
+extension RangeReplaceableCollectionType where Generator.Element : Equatable {
     /**
     To check if a collection insertects with an other whose generator's element type conforms to Equatable protocol.
     

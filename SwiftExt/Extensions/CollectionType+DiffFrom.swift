@@ -8,7 +8,7 @@
 
 //AMRK: - Collection Type Extension
 extension CollectionType {
-    public func diffFrom(comparedCollection: Self,
+    public func diff(comparedCollection: Self,
         equalityComparator: CollectionDiffer<Self>.ElementComparator,
         contentComparator: CollectionDiffer<Self>.ElementComparator)
         -> CollectionDiffer<Self>
@@ -21,7 +21,7 @@ extension CollectionType {
 }
 
 extension CollectionType where Generator.Element : Equatable {
-    public func diffFrom(comparedCollection: Self,
+    public func diff(comparedCollection: Self,
         contentComparator: CollectionDiffer<Self>.ElementComparator
             = {$0 == $1})
         -> CollectionDiffer<Self>
@@ -301,10 +301,10 @@ private class CollectionDiffHandler<C: CollectionType> {
     }
 }
 
-final private class CollectionInsertionHandler<C: CollectionType>:
+final public class CollectionInsertionHandler<C: CollectionType>:
     CollectionDiffHandler<C>
 {
-    typealias Handler = (toIndex: Index, toElement: Element) -> Void
+    public typealias Handler = (toIndex: Index, toElement: Element) -> Void
     let handler: Handler
     init(handler: Handler) {
         self.handler = handler
@@ -325,10 +325,10 @@ final private class CollectionInsertionHandler<C: CollectionType>:
     }
 }
 
-final private class CollectionDeletionHandler<C: CollectionType>:
+final public class CollectionDeletionHandler<C: CollectionType>:
     CollectionDiffHandler<C>
 {
-    typealias Handler = (fromIndex: Index, fromElement: Element) -> Void
+    public typealias Handler = (fromIndex: Index, fromElement: Element) -> Void
     let handler: Handler
     init(handler: Handler) {
         self.handler = handler
@@ -349,10 +349,10 @@ final private class CollectionDeletionHandler<C: CollectionType>:
     }
 }
 
-final private class CollectionMovingHandler<C: CollectionType>:
+final public class CollectionMovingHandler<C: CollectionType>:
     CollectionDiffHandler<C>
 {
-    typealias Handler = (fromIndex: Index, fromElement: Element,
+    public typealias Handler = (fromIndex: Index, fromElement: Element,
         toIndex: Index, toElement: Element) -> Void
     let handler: Handler
     init(handler: Handler) {
@@ -376,10 +376,10 @@ final private class CollectionMovingHandler<C: CollectionType>:
     }
 }
 
-final private class CollectionMovingWithChangeHandler<C: CollectionType>:
+final public class CollectionMovingWithChangeHandler<C: CollectionType>:
     CollectionDiffHandler<C>
 {
-    typealias Handler = (fromIndex: Index, fromElement: Element,
+    public typealias Handler = (fromIndex: Index, fromElement: Element,
         toIndex: Index, toElement: Element,
         changed: Bool) -> Void
     let handler: Handler
@@ -406,10 +406,10 @@ final private class CollectionMovingWithChangeHandler<C: CollectionType>:
     }
 }
 
-final private class CollectionStationaryHandler<C: CollectionType>:
+final public class CollectionStationaryHandler<C: CollectionType>:
     CollectionDiffHandler<C>
 {
-    typealias Handler = (index: Index, element: Element) -> Void
+    public typealias Handler = (index: Index, element: Element) -> Void
     let handler: Handler
     init(handler: Handler) {
         self.handler = handler
@@ -432,10 +432,10 @@ final private class CollectionStationaryHandler<C: CollectionType>:
     }
 }
 
-final private class CollectionStationaryWithChangeHandler<
+final public class CollectionStationaryWithChangeHandler<
     C: CollectionType>: CollectionDiffHandler<C>
 {
-    typealias Handler = (index: Index,
+    public typealias Handler = (index: Index,
         elment: Element, changed: Bool) -> Void
     let handler: Handler
     init(handler: Handler) {
@@ -460,10 +460,10 @@ final private class CollectionStationaryWithChangeHandler<
     }
 }
 
-final private class CollectionChangedHandler<C: CollectionType>:
+final public class CollectionChangedHandler<C: CollectionType>:
     CollectionDiffHandler<C>
 {
-    typealias Handler = (fromIndex: Index, fromElement: Element,
+    public typealias Handler = (fromIndex: Index, fromElement: Element,
         toIndex: Index, toElement: Element) -> Void
     let handler: Handler
     init(handler: Handler) {
@@ -488,10 +488,10 @@ final private class CollectionChangedHandler<C: CollectionType>:
     }
 }
 
-final private class CollectionMetaChangesHandler<C: CollectionType>:
+final public class CollectionMetaChangesHandler<C: CollectionType>:
     CollectionDiffHandler<C>
 {
-    typealias Handler = (changes: CollectionDiff,
+    public typealias Handler = (changes: CollectionDiff,
         fromIndex: Index?, fromElement: Element?,
         toIndex: Index?, toElement: Element?,
         changed: Bool?) -> Void

@@ -94,7 +94,7 @@ extension CollectionType {
         contentComparator: CollectionElementComparator,
         withHandler diffHandler: CollectionDiffHandler)
     {
-        self.diffFrom(comparedCollection,
+        self.diff(comparedCollection,
             equalityComparator: indexComparator,
             contentComparator: contentComparator
             ).handleChanges(differences, handler: diffHandler

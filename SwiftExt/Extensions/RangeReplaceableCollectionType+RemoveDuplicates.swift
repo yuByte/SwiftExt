@@ -1,12 +1,12 @@
 //
-//  ExtensibleCollectionType.swift
+//  RangeReplaceableCollectionType.swift
 //  Swift-Extended-Library
 //
 //  Created by Manfred Lau on 1/6/15.
 //
 //
 
-extension ExtensibleCollectionType {
+extension RangeReplaceableCollectionType {
     mutating public func removeDuplicates(
         @noescape preidicate:(Generator.Element) -> Bool)
         -> Self
@@ -42,7 +42,7 @@ extension ExtensibleCollectionType {
     }
 }
 
-extension ExtensibleCollectionType where Generator.Element : Equatable {
+extension RangeReplaceableCollectionType where Generator.Element : Equatable {
     /**
     Remove duplicated element in a ExtensibleCollectionType conformed type value
     
