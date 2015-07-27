@@ -6,15 +6,8 @@
 //
 //
 
-import Swift
-
-extension RangeReplaceableCollectionType where
-Generator.Element : Equatable,
-Generator.Element == _Element,
-Index: protocol<Comparable, ForwardIndexType>
-{
-    mutating public func removeIndices(indices: [Self.Index]) -> Self
-    {
+extension RangeReplaceableCollectionType where Index: Comparable {
+    mutating public func removeIndices(indices: [Self.Index]) -> Self {
         var removed = Self()
         
         let sortedIndices = indices.sort { $0 < $1}
@@ -32,12 +25,10 @@ Index: protocol<Comparable, ForwardIndexType>
 }
 
 extension RangeReplaceableCollectionType where
-Generator.Element : Equatable,
-Generator.Element == _Element,
-Index: protocol<Comparable, ForwardIndexType>
+    Generator.Element : Equatable,
+    Index: Comparable
 {
-    mutating public func remove(elements: Self) -> Self
-    {
+    mutating public func remove(elements: Self) -> Self {
         var indicesToBeRemoved: [Self.Index] = []
         
         for eachElement in elements {
