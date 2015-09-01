@@ -44,7 +44,8 @@ extension Fraction: FloatLiteralConvertible {
         // Let's get the visible part by convert it into a string
         let valueString = value.description
         if let _ = valueString.characters.indexOf(".") {
-            let decimalPartLength = distance(valueString.startIndex, advance(valueString.endIndex, -1))
+            let decimalPartLength = valueString.startIndex.distanceTo(
+                valueString.endIndex.advancedBy(-1))
             let enlarged = 10 ^^ decimalPartLength
             self = Fraction(numerator: Int(value) * enlarged, denominator: enlarged)
         } else {

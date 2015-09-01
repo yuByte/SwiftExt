@@ -13,8 +13,8 @@ extension RangeReplaceableCollectionType where Index: Comparable {
         let sortedIndices = indices.sort { $0 < $1}
         
         for eachIndex in sortedIndices {
-            let finalIndex = advance(eachIndex,
-                distance(removed.endIndex, removed.startIndex))
+            let finalIndex = eachIndex.advancedBy(
+                removed.endIndex.distanceTo(removed.startIndex))
             let target = self[finalIndex]
             removed.append(target)
             removeAtIndex(finalIndex)
@@ -42,8 +42,8 @@ extension RangeReplaceableCollectionType where
         let sortedIndicesToBeRemoved = indicesToBeRemoved.sort {$0 < $1}
         
         for eachIndex in sortedIndicesToBeRemoved {
-            let finalIndex = advance(eachIndex,
-                distance(removed.endIndex, removed.startIndex))
+            let finalIndex = eachIndex.advancedBy(
+                removed.endIndex.distanceTo(removed.startIndex))
             let target = self[finalIndex]
             removed.append(target)
             removeAtIndex(finalIndex)

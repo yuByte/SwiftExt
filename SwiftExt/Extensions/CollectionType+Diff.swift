@@ -57,7 +57,8 @@ CustomDebugStringConvertible, CustomStringConvertible, Hashable
             if contains(.Moved) {
                 descriptions.append("Moved")
             }
-            return "<\(self.dynamicType): " + " | ".join(descriptions) + ">"
+            return "<\(self.dynamicType): " +
+                descriptions.joinWithSeparator(" | ") + ">"
         }
     }
     
