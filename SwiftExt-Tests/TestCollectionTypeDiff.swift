@@ -76,23 +76,19 @@ class TestCollectionTypeDiff: XCTestCase {
         stationary = []
     }
     
-    func testDiff() {
-        
-    }
-    
-    func testEquatableDiffFrom() {
-        from.diffFrom(to).handleAdded { (_, toElement) -> Void in
+    func testEquatableDiff() {
+        from.diffAndHandle.insertion { (toIndex, toElement) -> Void in
             self.added.append(toElement)
-        }.handleDeleted { (_, fromElement) -> Void in
+        }.deletion { (fromIndex, fromElement) -> Void in
             self.removed.append(fromElement)
-        }.handleMoved { (_, fromElement, _, _) -> Void in
+        }.moving { (fromIndex, fromElement, toIndex, toElement) -> Void in
             self.moved.append(fromElement)
-        }.handleStationary { (_, fromElement) -> Void in
-            self.stationary.append(fromElement)
-        }.handleChanged({ (_, fromElement, _, toElement) -> Void in
+        }.stationary { (index, element) -> Void in
+            self.stationary.append(element)
+        }.contentChange { (fromIndex, fromElement, toIndex, toElement) -> Void in
             let change = (fromElement, toElement)
             self.changed.append(change)
-        }).commit()
+        }.to(to)
         
         added.sortInPlace()
         removed.sortInPlace()
@@ -109,69 +105,6 @@ class TestCollectionTypeDiff: XCTestCase {
             "Equatable-diff-from stationary items inspecting doesn't pass:\n\tTo be stationary:\(toBeStationary)\n\tStationary: \(stationary)")
         XCTAssert(changed.isEmpty,
             "Equatable-diff-from changed items inspecting doesn't pass:\n\tChanged:\(changed)")
-    }
-    
-    func testEquatableDiff() {
-        from.diff(to, differences: CollectionDiff.All) { (change, fromIndex, fromElement, toIndex, toElement, changed) -> Void in
-            if change.contains(.Added) {
-                XCTAssert(!change.contains(.Deleted),
-                    "It is impossible that \(CollectionDiff.Added) be with \(CollectionDiff.Deleted) at same time during diffing!")
-                XCTAssert(!change.contains(.Moved),
-                    "It is impossible that \(CollectionDiff.Added) be with \(CollectionDiff.Moved) at same time during diffing!")
-                XCTAssert(!change.contains(.Changed),
-                    "It is impossible that \(CollectionDiff.Added) be with \(CollectionDiff.Changed) at same time during diffing!")
-                self.added.append(toElement!)
-            }
-            if change.contains(.Deleted) {
-                XCTAssert(!change.contains(.Added),
-                    "It is impossible that \(CollectionDiff.Deleted) be with \(CollectionDiff.Added) at same time during diffing!")
-                XCTAssert(!change.contains(.Moved),
-                    "It is impossible that \(CollectionDiff.Deleted) be with \(CollectionDiff.Moved) at same time during diffing!")
-                XCTAssert(!change.contains(.Changed),
-                    "It is impossible that \(CollectionDiff.Deleted) be with \(CollectionDiff.Changed) at same time during diffing!")
-                self.removed.append(fromElement!)
-            }
-            if change.contains(.Moved) {
-                XCTAssert(!change.contains(.Deleted),
-                    "It is impossible that \(CollectionDiff.Moved) be with \(CollectionDiff.Deleted) at same time during diffing!")
-                XCTAssert(!change.contains(.Added),
-                    "It is impossible that \(CollectionDiff.Moved) be with \(CollectionDiff.Added) at same time during diffing!")
-                XCTAssert(!change.contains(.Stationary),
-                    "It is impossible that \(CollectionDiff.Moved) be with \(CollectionDiff.Stationary) at same time during diffing!")
-                self.moved.append(fromElement!)
-            }
-            if change.contains(.Stationary) {
-                XCTAssert(!change.contains(.Deleted),
-                    "It is impossible that \(CollectionDiff.Stationary) be with \(CollectionDiff.Deleted) at same time during diffing!")
-                XCTAssert(!change.contains(.Moved),
-                    "It is impossible that \(CollectionDiff.Stationary) be with \(CollectionDiff.Moved) at same time during diffing!")
-                XCTAssert(!change.contains(.Added),
-                    "It is impossible that \(CollectionDiff.Stationary) be with \(CollectionDiff.Added) at same time during diffing!")
-                self.stationary.append(fromElement!)
-            }
-            if change.contains(.Changed) {
-                XCTAssert(!change.contains(.Deleted),
-                    "It is impossible that \(CollectionDiff.Changed) be with \(CollectionDiff.Deleted) at same time during diffing!")
-                XCTAssert(!change.contains(.Moved),
-                    "It is impossible that \(CollectionDiff.Changed) be with \(CollectionDiff.Moved) at same time during diffing!")
-                XCTAssert(!change.contains(.Added),
-                    "It is impossible that \(CollectionDiff.Changed) be with \(CollectionDiff.Added) at same time during diffing!")
-            }
-        }
-        
-        added.sortInPlace()
-        removed.sortInPlace()
-        moved.sortInPlace()
-        stationary.sortInPlace()
-        
-        XCTAssert(toAdd == added,
-            "Equatable diff adding doesn't pass:\n\tTo add:\(toAdd)\n\tAdded:\(added)")
-        XCTAssert(toRemove == removed,
-            "Equatable diff remove doesn't pass:\n\tTo Remove:\(toRemove)\n\tRemoved:\(removed)")
-        XCTAssert(toMove == moved,
-            "Equatable diff move doesn't pass:\n\tTo move:\(toMove)\n\tMoved:\(moved)")
-        XCTAssert(toBeStationary == stationary,
-            "Equatable diff stationary doesn't pass:\n\tTo be stationary:\(toBeStationary)\n\tStationary: \(stationary)")
     }
 
 }
