@@ -7,7 +7,7 @@
 //
 
 extension RangeReplaceableCollectionType where Index: Comparable {
-    mutating public func removeIndices(indices: [Self.Index]) -> Self {
+    mutating public func removeIndicesInPlace(indices: [Self.Index]) -> Self {
         var removed = Self()
         
         let sortedIndices = indices.sort { $0 < $1}
@@ -28,7 +28,7 @@ extension RangeReplaceableCollectionType where
     Generator.Element : Equatable,
     Index: Comparable
 {
-    mutating public func remove(elements: Self) -> Self {
+    mutating public func removeInPlace(elements: Self) -> Self {
         var indicesToBeRemoved: [Self.Index] = []
         
         for eachElement in elements {
