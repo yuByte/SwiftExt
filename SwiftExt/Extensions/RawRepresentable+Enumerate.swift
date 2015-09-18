@@ -41,15 +41,15 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt>(bitmask: B, 
     let shouldHandleNotOccurred     = options.contains(.HandleNotOccurred)
     let shouldReverselyEnumerate    = options.contains(.ReverselyEnumerate)
     
-    let enumeratedRawValue  = bitmask.rawValue
-    var currentRawValue     = enumeratedRawValue
-    var referenceRawValue   = shouldReverselyEnumerate ? enumeratedRawValue : 1
+    let examinedRawValue  = bitmask.rawValue
+    var currentRawValue     = examinedRawValue
+    var referenceRawValue   = shouldReverselyEnumerate ? examinedRawValue : 1
     
     var shouldStop = false
     
     while currentRawValue != 0 && !shouldStop {
         if let relativeOption = B(rawValue: referenceRawValue) {
-            let hasOccurred = enumeratedRawValue |? referenceRawValue
+            let hasOccurred = (examinedRawValue | referenceRawValue) != 0
             
             if shouldHandleOccurred && hasOccurred && !shouldStop {
                 shouldStop = handler(bitmask: bitmask, bit: relativeOption)
@@ -59,7 +59,9 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt>(bitmask: B, 
             }
         }
         
-        referenceRawValue = shouldReverselyEnumerate ? referenceRawValue >> 1 : referenceRawValue << 1
+        referenceRawValue = shouldReverselyEnumerate ?
+            referenceRawValue >> 1 :
+            referenceRawValue << 1
         
         currentRawValue = currentRawValue >> 1
     }
@@ -88,7 +90,7 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt8>(bitmask: B,
     
     while currentRawValue != 0 && !shouldStop {
         if let relativeOption = B(rawValue: referenceRawValue) {
-            let hasOccurred = examinedRawValue |? referenceRawValue
+            let hasOccurred = (examinedRawValue & referenceRawValue) != 0
             
             if shouldHandleOccurred && hasOccurred && !shouldStop {
                 shouldStop = handler(bitmask: bitmask, bit: relativeOption)
@@ -98,7 +100,9 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt8>(bitmask: B,
             }
         }
         
-        referenceRawValue = shouldReverselyEnumerate ? referenceRawValue >> 1 : referenceRawValue << 1
+        referenceRawValue = shouldReverselyEnumerate ?
+            referenceRawValue >> 1 :
+            referenceRawValue << 1
         
         currentRawValue = currentRawValue >> 1
     }
@@ -127,7 +131,7 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt16>(bitmask: B
     
     while currentRawValue != 0 && !shouldStop {
         if let relativeOption = B(rawValue: referenceRawValue) {
-            let hasOccurred = examinedRawValue |? referenceRawValue
+            let hasOccurred = (examinedRawValue & referenceRawValue) != 0
             
             if shouldHandleOccurred && hasOccurred && !shouldStop {
                 shouldStop = handler(bitmask: bitmask, bit: relativeOption)
@@ -137,7 +141,9 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt16>(bitmask: B
             }
         }
         
-        referenceRawValue = shouldReverselyEnumerate ? referenceRawValue >> 1 : referenceRawValue << 1
+        referenceRawValue = shouldReverselyEnumerate ?
+            referenceRawValue >> 1 :
+            referenceRawValue << 1
         
         currentRawValue = currentRawValue >> 1
     }
@@ -166,7 +172,7 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt32>(bitmask: B
     
     while currentRawValue != 0 && !shouldStop {
         if let relativeOption = B(rawValue: referenceRawValue) {
-            let hasOccurred = examinedRawValue |? referenceRawValue
+            let hasOccurred = (examinedRawValue & referenceRawValue) != 0
             
             if shouldHandleOccurred && hasOccurred && !shouldStop {
                 shouldStop = handler(bitmask: bitmask, bit: relativeOption)
@@ -176,7 +182,9 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt32>(bitmask: B
             }
         }
         
-        referenceRawValue = shouldReverselyEnumerate ? referenceRawValue >> 1 : referenceRawValue << 1
+        referenceRawValue = shouldReverselyEnumerate ?
+            referenceRawValue >> 1 :
+            referenceRawValue << 1
         
         currentRawValue = currentRawValue >> 1
     }
@@ -205,7 +213,7 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt64>(bitmask: B
     
     while currentRawValue != 0 && !shouldStop {
         if let relativeOption = B(rawValue: referenceRawValue) {
-            let hasOccurred = examinedRawValue |? referenceRawValue
+            let hasOccurred = (examinedRawValue & referenceRawValue) != 0
             
             if shouldHandleOccurred && hasOccurred && !shouldStop {
                 shouldStop = handler(bitmask: bitmask, bit: relativeOption)
@@ -215,7 +223,9 @@ public func enumerate<B: RawRepresentable where B.RawValue == UInt64>(bitmask: B
             }
         }
         
-        referenceRawValue = shouldReverselyEnumerate ? referenceRawValue >> 1 : referenceRawValue << 1
+        referenceRawValue = shouldReverselyEnumerate ?
+            referenceRawValue >> 1 :
+            referenceRawValue << 1
         
         currentRawValue = currentRawValue >> 1
     }
