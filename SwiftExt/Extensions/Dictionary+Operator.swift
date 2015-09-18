@@ -15,3 +15,13 @@ public func +=<K, V> (inout left: Dictionary<K, V>,
     }
     return left
 }
+
+public func -=<K, V> (inout left: Dictionary<K, V>,
+    right: Dictionary<K, V>)
+    -> Dictionary<K, V>
+{
+    for k in right.keys {
+        left.removeValueForKey(k)
+    }
+    return left
+}
