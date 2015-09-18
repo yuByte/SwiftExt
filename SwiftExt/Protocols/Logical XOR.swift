@@ -6,6 +6,11 @@
 //
 //
 
+infix operator ^^ {
+associativity left
+precedence 140
+}
+
 /**
 Logical exclusive-or(XOR) calculator
 
@@ -15,6 +20,6 @@ Logical exclusive-or(XOR) calculator
 
 - returns:   The exclusive-or calculation result
 */
-public func ^ (lhs: Bool, rhs: Bool) -> Bool {
-    return (lhs && !rhs) || (!lhs && rhs)
+public func ^^ (lhs: Bool, rhs: Bool) -> Bool {
+    return !lhs != !rhs
 }
