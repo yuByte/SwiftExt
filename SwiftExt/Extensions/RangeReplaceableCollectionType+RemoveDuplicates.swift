@@ -7,7 +7,7 @@
 //
 
 extension RangeReplaceableCollectionType {
-    mutating public func removeDuplicates(
+    mutating public func removeDuplicatesInPlace(
         @noescape preidicate:(Generator.Element) -> Bool)
         -> Self
     {
@@ -48,7 +48,7 @@ extension RangeReplaceableCollectionType where Generator.Element : Equatable {
     
     - returns:   Returns the duplicates
     */
-    mutating public func removeDuplicates() -> Self {
+    mutating public func removeDuplicatesInPlace() -> Self {
         var container = Self()
         var duplicates = Self()
         
