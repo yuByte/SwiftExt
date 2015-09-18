@@ -6,7 +6,7 @@
 //
 //
 
-infix operator ^^ {
+infix operator ** {
 associativity left
 precedence 150
 }
@@ -20,7 +20,7 @@ To calculate the power of given exponent to a given Int value
 
 - returns:   The power of given exponent to a given Int value
 */
-public func ^^(var base: Int, var exponent: Int) -> Int {
+public func **(var base: Int, var exponent: Int) -> Int {
     switch base {
     case -1:
         return (exponent & 1) != 0 ? -1 : 1

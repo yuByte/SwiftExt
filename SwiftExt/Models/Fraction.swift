@@ -46,7 +46,7 @@ extension Fraction: FloatLiteralConvertible {
         if let _ = valueString.characters.indexOf(".") {
             let decimalPartLength = valueString.startIndex.distanceTo(
                 valueString.endIndex.advancedBy(-1))
-            let enlarged = 10 ^^ decimalPartLength
+            let enlarged = 10 ** decimalPartLength
             self = Fraction(numerator: Int(value) * enlarged, denominator: enlarged)
         } else {
             self = Fraction(numerator: 1, denominator: 1)
