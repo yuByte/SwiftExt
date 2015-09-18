@@ -96,19 +96,8 @@
 /* Begin PBXFileReference section */
 		630B4D871B48DDA000830454 /* SwiftExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		630B4D8B1B48DDA000830454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		631552D81B2533A5009C2B92 /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
-		631552D91B2533A5009C2B92 /* CalendarCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCache.swift; sourceTree = "<group>"; };
-		631552DA1B2533A5009C2B92 /* CalendarIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarIdentifiers.swift; sourceTree = "<group>"; };
-		631552DB1B2533A5009C2B92 /* CalendarOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarOption.swift; sourceTree = "<group>"; };
-		631552DC1B2533A5009C2B92 /* CalendarRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarRule.swift; sourceTree = "<group>"; };
-		631552DD1B2533A5009C2B92 /* CalendarTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTracker.swift; sourceTree = "<group>"; };
-		631552DE1B2533A5009C2B92 /* CalendarUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarUnit.swift; sourceTree = "<group>"; };
 		631552DF1B2533A5009C2B92 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		631552E01B2533A5009C2B92 /* DateComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateComponents.swift; sourceTree = "<group>"; };
-		631552E11B2533A5009C2B92 /* Locale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locale.swift; sourceTree = "<group>"; };
-		631552E21B2533A5009C2B92 /* Period.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		631552E31B2533A5009C2B92 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
-		631552E41B2533A5009C2B92 /* TimeZone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZone.swift; sourceTree = "<group>"; };
 		631552FF1B2535CC009C2B92 /* CollectionType+Conveniences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+Conveniences.swift"; sourceTree = "<group>"; };
 		631643BA1A5BA33600DE70DC /* CustomRecursiveStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRecursiveStringConvertible.swift; sourceTree = "<group>"; };
 		631643BF1A5BA39100DE70DC /* Dictionary+BitmaskAccessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+BitmaskAccessing.swift"; sourceTree = "<group>"; };
@@ -117,11 +106,7 @@
 		6316ECA619F48FB200B31AA5 /* Array+Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Operator.swift"; sourceTree = "<group>"; };
 		631729FE1A5B2A5B00B2AE2F /* RangeReplaceableCollectionType+RemoveDuplicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RangeReplaceableCollectionType+RemoveDuplicates.swift"; sourceTree = "<group>"; };
 		631C04DC1B3505D50069F7CC /* RawRepresentable+Enumerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+Enumerate.swift"; sourceTree = "<group>"; };
-		633A26CA1AA6FE5A001A9353 /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		634316F01AA7F7CD0095F466 /* Logical XOR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Logical XOR.swift"; sourceTree = "<group>"; };
-		6357725B1A566650004D91C4 /* CopiableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CopiableType.swift; sourceTree = "<group>"; };
-		63592CE41A7BC5FD0000D5CA /* EncodableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableType.swift; sourceTree = "<group>"; };
-		63592CE71A7BC6660000D5CA /* Archive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archive.swift; sourceTree = "<group>"; };
 		635BB7AD1B42CBA6001B062C /* CollectionType+Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+Diff.swift"; sourceTree = "<group>"; };
 		63730D651A5DB9DF0011552E /* Contains.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contains.swift; sourceTree = "<group>"; };
 		63730D6A1A5DC3420011552E /* Intersects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intersects.swift; sourceTree = "<group>"; };
@@ -226,10 +211,7 @@
 		6357725A1A566614004D91C4 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				633A26CA1AA6FE5A001A9353 /* Formatter.swift */,
 				631643BA1A5BA33600DE70DC /* CustomRecursiveStringConvertible.swift */,
-				6357725B1A566650004D91C4 /* CopiableType.swift */,
-				63592CE41A7BC5FD0000D5CA /* EncodableType.swift */,
 				634316F01AA7F7CD0095F466 /* Logical XOR.swift */,
 			);
 			path = Protocols;
@@ -361,21 +343,9 @@
 		63847C8F19E79D4A0098BC0E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				631552D81B2533A5009C2B92 /* Calendar.swift */,
-				631552D91B2533A5009C2B92 /* CalendarCache.swift */,
-				631552DA1B2533A5009C2B92 /* CalendarIdentifiers.swift */,
-				631552DB1B2533A5009C2B92 /* CalendarOption.swift */,
-				631552DC1B2533A5009C2B92 /* CalendarRule.swift */,
-				631552DD1B2533A5009C2B92 /* CalendarTracker.swift */,
-				631552DE1B2533A5009C2B92 /* CalendarUnit.swift */,
-				631552E01B2533A5009C2B92 /* DateComponents.swift */,
-				631552E11B2533A5009C2B92 /* Locale.swift */,
-				631552E21B2533A5009C2B92 /* Period.swift */,
-				631552E41B2533A5009C2B92 /* TimeZone.swift */,
 				631552DF1B2533A5009C2B92 /* Date.swift */,
 				631552E31B2533A5009C2B92 /* TimeInterval.swift */,
 				631643C21A5BA3FC00DE70DC /* Fraction.swift */,
-				63592CE71A7BC6660000D5CA /* Archive.swift */,
 				637EEC761B6498B60002F983 /* Weak.swift */,
 			);
 			path = Models;
