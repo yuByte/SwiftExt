@@ -13,21 +13,15 @@ public func += <T>(inout lhs: Set<T>, rhs: T) {
 }
 
 public func += <T>(inout lhs: Set<T>, rhs: Set<T>) {
-    for each in rhs {
-        lhs.insert(each)
-    }
+    lhs.unionInPlace(rhs)
 }
 
 public func + <T>(lhs: Set<T>, rhs: T) -> Set<T> {
-    var copied = lhs
-    copied.insert(rhs)
-    return copied
+    return lhs.union([rhs])
 }
 
 public func + <T>(lhs: T, rhs: Set<T>) -> Set<T> {
-    var copied = rhs
-    copied.insert(lhs)
-    return copied
+    return rhs.union([lhs])
 }
 
 public func + <T>(lhs: Set<T>, rhs: Set<T>) -> Set<T> {
@@ -40,21 +34,11 @@ public func -= <T>(inout lhs: Set<T>, rhs: T) {
 }
 
 public func -= <T>(inout lhs: Set<T>, rhs: Set<T>) {
-    for each in rhs {
-        lhs.remove(each)
-    }
+    lhs.subtractInPlace(rhs)
 }
 
 public func - <T>(lhs: Set<T>, rhs: T) -> Set<T> {
-    var copied = lhs
-    copied.remove(rhs)
-    return copied
-}
-
-public func - <T>(lhs: T, rhs: Set<T>) -> Set<T> {
-    var copied = rhs
-    copied.remove(lhs)
-    return copied
+    return lhs.subtract([rhs])
 }
 
 public func - <T>(lhs: Set<T>, rhs: Set<T>) -> Set<T> {
