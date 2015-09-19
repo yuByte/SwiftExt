@@ -17,6 +17,16 @@ public struct Weak<T: AnyObject>: Hashable {
     }
 }
 
+public func ==<T: AnyObject where T: Equatable>(lhs: Weak<T>, rhs: Weak<T>)
+    -> Bool
+{
+    return lhs.value == rhs.value
+}
+
 public func ==<T: AnyObject>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
+    return lhs.value === rhs.value
+}
+
+public func ===<T: AnyObject>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
     return lhs.value === rhs.value
 }
