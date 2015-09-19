@@ -41,7 +41,7 @@ extension OptionSetFallback where O.RawValue == UInt {
     func fallback(value: OptionSetRawValue) -> OptionSetRawValue? {
         switch self {
         case let .LeftShift(max):
-            if value == OptionSetRawValue.max || value == max.rawValue {
+            if value == OptionSetRawValue.max || value >= max.rawValue {
                 return nil
             }
             return (value << OptionSetRawValue(1))
