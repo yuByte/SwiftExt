@@ -42,6 +42,23 @@ extension BitmaskFallback where B.RawValue == UInt {
 }
 
 /**
+Set value with a bitmask key in a dictionary. The dictionary must use UInt as
+its `Key` type.
+
+- parameter     value:           Value to be set
+
+- parameter     bitmask:         The bitmask key
+
+- parameter     dictionary:      A storage dictionary
+*/
+public func updateValue<V, B: RawRepresentable where B.RawValue == UInt>
+    (value: V, forBitmask bitmask: B,
+    inout inDictionary dictionary: Dictionary<UInt, V>)
+{
+    dictionary.updateValue(value, forKey: bitmask.rawValue)
+}
+
+/**
 Get value for a bitmask key in a dictionary. The dictionary must use UInt as its
 `Key` type.
 
