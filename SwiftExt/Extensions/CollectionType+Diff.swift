@@ -334,24 +334,24 @@ extension CollectionDiffer {
     }
 }
 
-//MARK: - Collection Diff Diff-Form Infrastructure
+//MARK: - Collection Diffing Infrastructure
+private let validDiffs: [CollectionDiff] = [
+    .Stationary,
+    .Added,
+    .Deleted,
+    .Moved,
+    .Changed,
+    [.Stationary, .Changed],
+    [.Moved, .Changed],
+    .All
+]
+
 extension CollectionDiff {
     private enum Error: ErrorType {
         case ValidateError
     }
     
     private func validate () throws {
-        let validDiffs: [CollectionDiff] = [
-            .Stationary,
-            .Added,
-            .Deleted,
-            .Moved,
-            .Changed,
-            [.Stationary, .Changed],
-            [.Moved, .Changed],
-            .All
-        ]
-        
         if !validDiffs.contains(self) {
             throw Error.ValidateError
         }

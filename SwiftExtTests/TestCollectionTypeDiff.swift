@@ -39,7 +39,7 @@ class TestCollectionTypeDiff: XCTestCase {
                 }
             }
             
-            to.remove(toRemove)
+            to.removeInPlace(toRemove)
             
             for index in 0..<toMove.count/2 {
                 let leftElement = toMove[index]
