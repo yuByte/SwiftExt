@@ -1,6 +1,6 @@
 //
 //  Power.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred Lau on 1/6/15.
 //
@@ -42,4 +42,3 @@ public func **(var base: Int, var exponent: Int) -> Int {
         return result
     }
 }
-

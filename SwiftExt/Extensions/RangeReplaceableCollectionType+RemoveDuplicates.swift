@@ -1,6 +1,6 @@
 //
-//  RangeReplaceableCollectionType.swift
-//  Swift-Extended-Library
+//  RangeReplaceableCollectionType+RemoveDuplicates.swift
+//  SwiftExt
 //
 //  Created by Manfred Lau on 1/6/15.
 //

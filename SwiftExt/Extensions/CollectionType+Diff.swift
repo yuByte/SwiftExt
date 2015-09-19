@@ -1,6 +1,6 @@
 //
 //  CollectionType+Diff.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred on 6/30/15.
 //
@@ -29,13 +29,13 @@ public struct CollectionDiff: OptionSetType,
     public init(rawValue value: RawValue) { self.rawValue = value }
     
     public static var Stationary    = CollectionDiff(rawValue: 1 << 0)
-    public static var Added         = CollectionDiff(rawValue: 1 << 1)
+    public static var Inserted      = CollectionDiff(rawValue: 1 << 1)
     public static var Deleted       = CollectionDiff(rawValue: 1 << 2)
     public static var Moved         = CollectionDiff(rawValue: 1 << 3)
     public static var Changed       = CollectionDiff(rawValue: 1 << 4)
     
     public static var All: CollectionDiff =
-    [.Stationary, .Added, .Deleted, .Moved, .Changed]
+    [.Stationary, .Inserted, .Deleted, .Moved, .Changed]
     
     public var hashValue: Int { return Int(rawValue) }
     
@@ -45,14 +45,14 @@ public struct CollectionDiff: OptionSetType,
             if contains(.Stationary) {
                 descriptions.append("Stationary")
             }
-            if contains(.Added) {
-                descriptions.append("Added")
+            if contains(.Inserted) {
+                descriptions.append("Inserted")
             }
             if contains(.Deleted) {
                 descriptions.append("Deleted")
             }
             if contains(.Changed) {
-                descriptions.append("Moved")
+                descriptions.append("Changed")
             }
             if contains(.Moved) {
                 descriptions.append("Moved")
@@ -135,7 +135,7 @@ final public class CollectionDiffer<C: CollectionType> {
         let fromElementsIterativeDiff = CollectionDiff.Deleted
         
         let toElementsIterativeDiff: CollectionDiff = [
-            .Stationary, .Added, .Moved, .Changed]
+            .Stationary, .Inserted, .Moved, .Changed]
         
         let wrappedFromElements = ElementWrapper.wrapCollection(
             fromCollection, equalityComparator: equalityComparator)
@@ -337,7 +337,7 @@ extension CollectionDiffer {
 //MARK: - Collection Diffing Infrastructure
 private let validDiffs: [CollectionDiff] = [
     .Stationary,
-    .Added,
+    .Inserted,
     .Deleted,
     .Moved,
     .Changed,
@@ -384,7 +384,7 @@ final public class CollectionInsertionHandler<C: CollectionType>:
     private let handler: Handler
     private init(handler: Handler) {
         self.handler = handler
-        super.init(diff: .Added)
+        super.init(diff: .Inserted)
     }
     
     private override func handleDiff(fromIndex fromIndex: Index?,
@@ -595,7 +595,7 @@ final public class CollectionMetaChangesHandler<C: CollectionType>:
                 case (.Some(_), _, nil, _):
                     return self.diff.intersect(.Deleted)
                 case (nil, _, .Some(_), _):
-                    return self.diff.intersect(.Added)
+                    return self.diff.intersect(.Inserted)
                 default: return []
                 }
                 }()

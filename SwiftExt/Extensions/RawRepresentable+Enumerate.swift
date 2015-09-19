@@ -1,6 +1,6 @@
 //
 //  RawRepresentable+Enumerate.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred Lau on 6/20/15.
 //

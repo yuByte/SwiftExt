@@ -1,6 +1,6 @@
 //
 //  Contains.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred Lau on 1/8/15.
 //

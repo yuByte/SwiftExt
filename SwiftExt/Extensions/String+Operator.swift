@@ -1,6 +1,6 @@
 //
 //  String+Operator.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred Lau on 5/20/15.
 //

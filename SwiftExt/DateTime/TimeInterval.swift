@@ -1,6 +1,6 @@
 //
 //  TimeInterval.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred Lau on 11/12/14.
 //

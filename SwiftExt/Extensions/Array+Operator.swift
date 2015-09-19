@@ -1,12 +1,10 @@
 //
 //  Array.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred Lau on 10/20/14.
 //
 //
-
-import Swift
 
 public func += <T> (inout lhs: Array<Any>, rhs: Array<T>?) {
     if rhs != nil {

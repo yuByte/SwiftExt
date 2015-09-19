@@ -1,6 +1,6 @@
 //
 //  Logical XOR.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred Lau on 3/5/15.
 //
@@ -12,7 +12,7 @@ precedence 140
 }
 
 /**
-Logical exclusive-or(XOR) calculator
+Logical exclusive-or(XOR) operator
 
 - parameter     lhs:             A boolean value
 

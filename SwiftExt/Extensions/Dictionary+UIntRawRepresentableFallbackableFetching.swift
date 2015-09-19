@@ -1,53 +1,10 @@
 //
-//  Dictionary+BitmaskAccessing.swift
-//  Swift-Extended-Library
+//  Dictionary+UIntRawRepresentableFallbackableFetching.swift
+//  SwiftExt
 //
 //  Created by Manfred Lau on 1/6/15.
 //
 //
-
-public enum OptionSetFallback<O: OptionSetType where O.RawValue == UInt> {
-    case RightShift, LeftShift(max: O)
-    
-    func fallback(value: UInt) -> UInt? {
-        switch self {
-        case let .LeftShift(max):
-            if value == UInt.max || value == max.rawValue {
-                return nil
-            }
-            return value << 1
-        case .RightShift:
-            if value == UInt.min {
-                return nil
-            }
-            return value >> 1
-        }
-    }
-}
-
-extension Dictionary where Key: OptionSetType, Key.RawValue == UInt {
-    public func valueForKey(key: Key,
-        fallback: OptionSetFallback<Key>)
-        -> Value?
-    {
-        let object = self[key]
-        
-        if object != nil {
-            return object
-        } else if key.rawValue == 0 {
-            return nil
-        } else if key.rawValue == UInt.max {
-            return nil
-        } else {
-            if let fallbackValue = fallback.fallback(key.rawValue) {
-                let nextBitmask = Key(rawValue: fallbackValue)
-                return valueForKey(nextBitmask,
-                    fallback: fallback)
-            }
-            return nil
-        }
-    }
-}
 
 /**
 Set value for a bitmask key in a dictionary

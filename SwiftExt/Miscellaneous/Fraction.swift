@@ -1,6 +1,6 @@
 //
 //  Fraction.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred Lau on 1/6/15.
 //

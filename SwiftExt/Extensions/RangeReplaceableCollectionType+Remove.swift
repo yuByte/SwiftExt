@@ -1,6 +1,6 @@
 //
-//  Remove.swift
-//  Swift-Extended-Library
+//  RangeReplaceableCollectionType+Remove.swift
+//  SwiftExt
 //
 //  Created by Manfred Lau on 5/27/15.
 //

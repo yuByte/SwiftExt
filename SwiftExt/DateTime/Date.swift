@@ -1,6 +1,6 @@
 //
 //  Date.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred Lau on 10/10/14.
 //

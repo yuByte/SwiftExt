@@ -1,12 +1,12 @@
 //
-//  CollectionType+Conveniences.swift
-//  Swift-Extended-Library
+//  Indexable+Conveniences.swift
+//  SwiftExt
 //
 //  Created by Manfred Lau on 6/8/15.
 //
 //
 
-extension CollectionType {
+extension Indexable {
     /**
     To get the index cap of a given CollectionType conformed type value
     

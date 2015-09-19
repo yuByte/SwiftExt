@@ -1,6 +1,6 @@
 //
 //  TestCollectionTypeDiff.swift
-//  Swift-Extended-Library
+//  SwiftExt
 //
 //  Created by Manfred on 6/30/15.
 //

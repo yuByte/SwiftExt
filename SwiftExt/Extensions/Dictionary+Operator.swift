@@ -1,6 +1,6 @@
 //
-//  Dictionary.swift
-//  Swift-Extended-Library
+//  Dictionary+Operator.swift
+//  SwiftExt
 //
 //  Created by Manfred Lau on 11/13/14.
 //
