@@ -8,6 +8,8 @@
 
 extension RangeReplaceableCollectionType where Index: Comparable {
     mutating public func removeIndicesInPlace(indices: [Self.Index]) -> Self {
+        guard indices.count > 0 else { return Self() }
+        
         var removed = Self()
         
         let sortedIndices = indices.sort { $0 < $1}
@@ -29,6 +31,8 @@ extension RangeReplaceableCollectionType where
     Index: Comparable
 {
     mutating public func removeInPlace(elements: Self) -> Self {
+        guard elements.count > 0 else { return Self() }
+        
         var indicesToBeRemoved: [Self.Index] = []
         
         for eachElement in elements {
