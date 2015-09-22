@@ -89,6 +89,9 @@
 		638880011BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638880001BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift */; settings = {ASSET_TAGS = (); }; };
 		638880021BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638880001BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift */; settings = {ASSET_TAGS = (); }; };
 		638880031BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638880001BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift */; settings = {ASSET_TAGS = (); }; };
+		63A0D39B1BAF9D5E0027E544 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0D39A1BAF9D5E0027E544 /* JSON.swift */; settings = {ASSET_TAGS = (); }; };
+		63A0D39C1BAF9D5E0027E544 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0D39A1BAF9D5E0027E544 /* JSON.swift */; settings = {ASSET_TAGS = (); }; };
+		63A0D39D1BAF9D5E0027E544 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0D39A1BAF9D5E0027E544 /* JSON.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +149,7 @@
 		63887FF81BAD13D80063FC09 /* SequenceType+StoppableMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+StoppableMap.swift"; sourceTree = "<group>"; };
 		63887FFC1BAD14AD0063FC09 /* SequenceType+StoppableReduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+StoppableReduce.swift"; sourceTree = "<group>"; };
 		638880001BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+StoppableFlatMap.swift"; sourceTree = "<group>"; };
+		63A0D39A1BAF9D5E0027E544 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +360,7 @@
 				63887FAA1BAD0BDF0063FC09 /* CustomRecursiveStringConvertible.swift */,
 				63887FAB1BAD0BDF0063FC09 /* Fraction.swift */,
 				63887FAC1BAD0BDF0063FC09 /* Weak.swift */,
+				63A0D39A1BAF9D5E0027E544 /* JSON.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 				63887FE71BAD0BF80063FC09 /* SetAlgebraType+Operator.swift in Sources */,
 				63887FE31BAD0BF80063FC09 /* RangeReplaceableCollectionType+RemoveDuplicates.swift in Sources */,
 				63887FE91BAD0BF80063FC09 /* Exponentiation.swift in Sources */,
+				63A0D39D1BAF9D5E0027E544 /* JSON.swift in Sources */,
 				63887FE81BAD0BF80063FC09 /* String+Operator.swift in Sources */,
 				63887FDA1BAD0BF80063FC09 /* TimeInterval.swift in Sources */,
 				63887FF71BAD0DC90063FC09 /* Dictionary+UIntOptionSetTypeFallbackableFetching.swift in Sources */,
@@ -631,6 +637,7 @@
 				63887FBD1BAD0BF60063FC09 /* SetAlgebraType+Operator.swift in Sources */,
 				63887FB91BAD0BF60063FC09 /* RangeReplaceableCollectionType+RemoveDuplicates.swift in Sources */,
 				63887FBF1BAD0BF60063FC09 /* Exponentiation.swift in Sources */,
+				63A0D39B1BAF9D5E0027E544 /* JSON.swift in Sources */,
 				63887FBE1BAD0BF60063FC09 /* String+Operator.swift in Sources */,
 				63887FB01BAD0BF60063FC09 /* TimeInterval.swift in Sources */,
 				63887FF51BAD0DC90063FC09 /* Dictionary+UIntOptionSetTypeFallbackableFetching.swift in Sources */,
@@ -672,6 +679,7 @@
 				63887FD21BAD0BF70063FC09 /* SetAlgebraType+Operator.swift in Sources */,
 				63887FCE1BAD0BF70063FC09 /* RangeReplaceableCollectionType+RemoveDuplicates.swift in Sources */,
 				63887FD41BAD0BF70063FC09 /* Exponentiation.swift in Sources */,
+				63A0D39C1BAF9D5E0027E544 /* JSON.swift in Sources */,
 				63887FD31BAD0BF70063FC09 /* String+Operator.swift in Sources */,
 				63887FC51BAD0BF70063FC09 /* TimeInterval.swift in Sources */,
 				63887FF61BAD0DC90063FC09 /* Dictionary+UIntOptionSetTypeFallbackableFetching.swift in Sources */,
