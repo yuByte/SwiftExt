@@ -95,6 +95,9 @@
 		638880011BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638880001BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift */; settings = {ASSET_TAGS = (); }; };
 		638880021BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638880001BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift */; settings = {ASSET_TAGS = (); }; };
 		638880031BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638880001BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift */; settings = {ASSET_TAGS = (); }; };
+		639D3FD41BD63714008C1246 /* CollectionType+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D3FD31BD63714008C1246 /* CollectionType+Merge.swift */; settings = {ASSET_TAGS = (); }; };
+		639D3FD51BD63714008C1246 /* CollectionType+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D3FD31BD63714008C1246 /* CollectionType+Merge.swift */; settings = {ASSET_TAGS = (); }; };
+		639D3FD61BD63714008C1246 /* CollectionType+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D3FD31BD63714008C1246 /* CollectionType+Merge.swift */; settings = {ASSET_TAGS = (); }; };
 		63A0D39B1BAF9D5E0027E544 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0D39A1BAF9D5E0027E544 /* JSON.swift */; settings = {ASSET_TAGS = (); }; };
 		63A0D39C1BAF9D5E0027E544 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0D39A1BAF9D5E0027E544 /* JSON.swift */; settings = {ASSET_TAGS = (); }; };
 		63A0D39D1BAF9D5E0027E544 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0D39A1BAF9D5E0027E544 /* JSON.swift */; settings = {ASSET_TAGS = (); }; };
@@ -165,6 +168,7 @@
 		63887FF81BAD13D80063FC09 /* SequenceType+StoppableMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+StoppableMap.swift"; sourceTree = "<group>"; };
 		63887FFC1BAD14AD0063FC09 /* SequenceType+StoppableReduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+StoppableReduce.swift"; sourceTree = "<group>"; };
 		638880001BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SequenceType+StoppableFlatMap.swift"; sourceTree = "<group>"; };
+		639D3FD31BD63714008C1246 /* CollectionType+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionType+Merge.swift"; sourceTree = "<group>"; };
 		63A0D39A1BAF9D5E0027E544 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		63BC11B71BBE193300B8CBCE /* MultiTransactionCoalescer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiTransactionCoalescer.swift; sourceTree = "<group>"; };
 		63BC11BB1BBE5D2400B8CBCE /* TestMultiTransactionCoalescer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMultiTransactionCoalescer.swift; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 				638880001BAD16C30063FC09 /* SequenceType+StoppableFlatMap.swift */,
 				63887F9A1BAD0BDF0063FC09 /* Indexable+IndexCap.swift */,
 				63887F9B1BAD0BDF0063FC09 /* CollectionType+Diff.swift */,
+				639D3FD31BD63714008C1246 /* CollectionType+Merge.swift */,
 				63887F9D1BAD0BDF0063FC09 /* Dictionary+UIntRawRepresentableFallbackableFetching.swift */,
 				63887FF41BAD0DC90063FC09 /* Dictionary+UIntOptionSetTypeFallbackableFetching.swift */,
 				63887F9E1BAD0BDF0063FC09 /* Dictionary+Operator.swift */,
@@ -636,6 +641,7 @@
 				63887FDA1BAD0BF80063FC09 /* TimeInterval.swift in Sources */,
 				63887FF71BAD0DC90063FC09 /* Dictionary+UIntOptionSetTypeFallbackableFetching.swift in Sources */,
 				63887FEC1BAD0BF80063FC09 /* Fraction.swift in Sources */,
+				639D3FD61BD63714008C1246 /* CollectionType+Merge.swift in Sources */,
 				63887FED1BAD0BF80063FC09 /* Weak.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +680,7 @@
 				63887FB01BAD0BF60063FC09 /* TimeInterval.swift in Sources */,
 				63887FF51BAD0DC90063FC09 /* Dictionary+UIntOptionSetTypeFallbackableFetching.swift in Sources */,
 				63887FC21BAD0BF60063FC09 /* Fraction.swift in Sources */,
+				639D3FD41BD63714008C1246 /* CollectionType+Merge.swift in Sources */,
 				63887FC31BAD0BF60063FC09 /* Weak.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -721,6 +728,7 @@
 				63887FC51BAD0BF70063FC09 /* TimeInterval.swift in Sources */,
 				63887FF61BAD0DC90063FC09 /* Dictionary+UIntOptionSetTypeFallbackableFetching.swift in Sources */,
 				63887FD71BAD0BF70063FC09 /* Fraction.swift in Sources */,
+				639D3FD51BD63714008C1246 /* CollectionType+Merge.swift in Sources */,
 				63887FD81BAD0BF70063FC09 /* Weak.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

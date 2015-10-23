@@ -38,17 +38,18 @@ Row No. |                              Value
 
 In the previous update example, *Delete Row 3* described the row in the snapshot
 before the transaction and *Insert Row 4* described the row in the snapshot 
-after the transaction. Thus we can be aware of that for an update transaction,
+after the transaction. Thus we can be aware of that, for an update transaction,
 update actions are described based on different time of the transaction - some
 of them are before the transaction and some of them are after.
 
 For all supported update actions: 
-Insert      : Describe based on snapshot *AFTER* transaction.
-Delete      : Describe based on snapshot *BEFORE* transaction.
-Move        : Describe based on snapshot *BEFORE* transaction.
-Update      : Describe based on snapshot *BEFORE* transaction.
+Insert      : Described based on snapshot *AFTER* transaction.
+Delete      : Described based on snapshot *BEFORE* transaction.
+Move        : Described based on snapshot *BEFORE* transaction.
+Update      : Described based on snapshot *BEFORE* transaction.
 
-Due to such a thing, there are two common conventions in many update system:
+Due to such a thing, there are two common conventions in many transactional 
+update system:
 1) Defers all update actions described based on the snapshot after transaction.
 2) Process all update actions described based on the snapshot before transaction
 at first by following: Update -> Move -> Deletion.
