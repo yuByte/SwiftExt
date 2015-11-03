@@ -30,3 +30,7 @@ public func ==<T: AnyObject>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
 public func ===<T: AnyObject>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
     return lhs.value === rhs.value
 }
+
+public func weakify<T: AnyObject>(object: T) -> Weak<T> {
+    return Weak<T>(object)
+}
